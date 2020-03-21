@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title>Real Time Movement</title>
+        <script src="./js/sockjs-0.3.4.js"></script>
+        <script src="./js/stomp.js"></script>
+        <script type="text/javascript">
+             
+            var stompClient = null;
+             
+            function setConnected(connected) {
+                document.getElementById('connect').disabled = connected;
+                document.getElementById('disconnect').disabled = !connected;
+            }
+             
+            function connect() {
+                var socket = new SockJS('/stored/data');
+                stompClient = Stomp.over(socket);  
+                stompClient.connect({}, function(frame) {
+                    setConnected(true);
+                    console.log('Connected: ' + frame);
+                    stompClient.subscribe('/topic/messages', function(messageOutput) {
+                        showMessageOutput(JSON.parse(messageOutput.body));
+                    });
+                });
+
+                disconnect();
+            }
+             
+            function disconnect() {
+                if(stompClient != null) {
+                    stompClient.disconnect();
+                }
+                setConnected(false);
+                console.log("Disconnected");
+            }
+             
+            
+            function showMessageOutput(messageOutput) {
+                var cv = document.getElementById("canvas");
+                var cv_ctx = cv.getContext("2d");
+                ctx.fillStyle = "#0FF000";
+                var jPos = messageOutput["jointPos"];
+                for(var i =0;i< jPos.lenght;i++){
+                    ctx.beginPath();
+                    ctx.arc(jPos[i][0], jPos[i][1], 5, 0, 2 * Math.PI);
+                    ctx.closePath();
+                    ctx.fill();   
+                }
+            }
+            
+        </script>
+    </head>
+    <body style= "text-align: center;">
+        <div>
+            <div>
+                <h3>Person Stored Movement</h3>
+            </div>
+            <div><canvas id="canvas" onload="fill()" width="640" height="480"></canvas></div>
+            <br />
+            <div>
+                <button id="connect" onclick="connect();">Show Movement</button>
+                
+                
+            </div>
+            <br />
+            
+        </div>
+        <script>
+            var c = document.getElementById("canvas");
+            var ctx = c.getContext("2d");
+            ctx.fillStyle = "#000000";
+            ctx.fillRect(0, 0, c.width, c.height);
+
+            ctx.fillStyle = "#0FF000";
+            ctx.beginPath();
+            ctx.arc(100, 75, 5, 0, 2 * Math.PI);
+            ctx.closePath();
+            ctx.fill();
+
+            
+            ctx.fillStyle = "#0FF000";
+            ctx.beginPath();
+            ctx.arc(coordx, coordy, 5, 0, 2 * Math.PI);
+            ctx.closePath();
+            ctx.fill();
+            
+        </script>
+    </body>
+</html>
