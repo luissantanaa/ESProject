@@ -39,9 +39,23 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-	</dependencies>
+                
+                <dependency>
+                    <groupId>javax.websocket</groupId>
+                    <artifactId>javax.websocket-api</artifactId>
+                    <version>1.1</version>
+                </dependency>
+                
+                <dependency>
+                    <groupId>org.json</groupId>
+                    <artifactId>json</artifactId>
+                    <version>20190722</version>
+                </dependency>
+        
+        </dependencies>
 
-	<build>
+	
+        <build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -49,5 +63,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
+        
 </project>
