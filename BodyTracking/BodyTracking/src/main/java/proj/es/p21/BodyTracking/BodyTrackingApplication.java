@@ -1,4 +1,4 @@
-package proj.es.BodyTracking;
+package proj.es.p21.BodyTracking;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

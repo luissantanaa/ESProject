@@ -3,12 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package JpaP;
+package proj.es.p21.JpaP;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
  *
  * @author alexandre
  */
-public class JointCollection {
+public interface LoggerRep extends JpaRepository<String, String>{
     
 }

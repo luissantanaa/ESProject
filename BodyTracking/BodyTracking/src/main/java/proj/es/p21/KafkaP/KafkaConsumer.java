@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package KafkaP;
+package proj.es.p21.KafkaP;
 
 import java.io.IOException;
 import org.slf4j.Logger;
@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.kafka.core.KafkaTemplate;
-import rep.LoggerRep;
+import proj.es.p21.JpaP.JointCollectionRepository;
 
 /**
  *
@@ -23,13 +23,21 @@ import rep.LoggerRep;
 
 public class KafkaConsumer {
     private static final Logger logger = (Logger) LoggerFactory.getLogger(Producer.class);
-
+    
+    
+    //automatically send to database
     @Autowired
-    LoggerRep repLogger;
+    JointCollectionRepository jointsRep;
+    
      
     @KafkaListener(topics = "", groupId = "") //topico e groupID
-    public void consume(String message) throws IOException{
+    public void consumeJointReadings(String message) throws IOException{
         logger.info(String.format("%s", message));
-        repLogger.save(new KafkaMessage(message));
+    }
+    
+    
+    @KafkaListener(topics = "", groupId = "") //topico e groupID
+    public void consumeLogs(String message) throws IOException{
+        logger.info(String.format("%s", message));
     }
 }
