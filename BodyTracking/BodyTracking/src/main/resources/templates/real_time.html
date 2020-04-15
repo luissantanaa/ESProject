@@ -1,6 +1,31 @@
 <html>
     <head>
         <title>Real Time Movement</title>
+        <style>
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #333;
+            }
+            
+            li {
+              float: left;
+            }
+            
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            li a:hover {
+              background-color: #111;
+            }
+        </style>
         <script src="./js/sockjs-0.3.4.js"></script>
         <script src="./js/stomp.js"></script>
         <script type="text/javascript">
@@ -55,6 +80,33 @@
     </head>
     <body onload="disconnect()" style= "text-align: center;">
         <div>
+        <ul>
+            <li>
+            <form action="#" th:action="@{/home}" id ="home_form" method="get">
+                <input type="hidden" th:field="*{username}" value = ${username}/>
+                <a onclick="submit_home()">Home</a>
+            </form>
+            </li>
+            <li>
+            <form action="#" th:action="@{/real_time}" id ="real_form" method="get">
+                <input type="hidden" th:field="*{username}" value = ${username}/>
+                <a onclick="submit_real()">Real Time</a>
+            </form>
+            </li>
+            <li>
+            <form action="#" th:action="@{/stored}" id ="stored_form" method="get">
+                <input type="hidden" th:field="*{username}" value = ${username}/>
+                <a onclick="submit_stored()">History</a>
+            </form>
+            </li>
+            <li><a th:href="/login">LogIn</a></li>
+            <li><a th:href="/logout">LogOut</a></li>
+            
+            
+        </ul>
+        </div>
+         
+        <div>
             <div>
                 <h3>Person Real Time Movement</h3>
             </div>
@@ -70,6 +122,19 @@
             
         </div>
         <script>
+    
+            function submit_home(){
+            document.getElementById("home_form").submit();
+            }
+        
+            function submit_real(){
+            document.getElementById("real_form").submit();
+            }
+        
+            function submit_stored(){
+            document.getElementById("stored_form").submit();
+            }
+        
             var c = document.getElementById("canvas");
             var ctx = c.getContext("2d");
             ctx.fillStyle = "#000000";

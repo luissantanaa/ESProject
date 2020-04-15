@@ -39,13 +39,10 @@ public class RestController {
 
 
     @GetMapping("/home")
-    public String get_home(Model m){
-        return "index.html";
-    }
-
-    @GetMapping("/home/{username}")
-    public String get_home(Model m){
-        model.addAttribute("username", username);
+    public String get_home(@RequestParam(required = false) String username , Model m){
+        if(username != null){    
+            model.addAttribute("username", username);
+        }
         return "index.html";
     }
 
@@ -82,12 +79,14 @@ public class RestController {
     }
     
     
-    @RequestMapping("/real_time/{username}")
-    public String real_time_page(Model m){
-        if(loggedIn.containsKey(username)){
-            if(loggedIn.get(username)){
-                m.addAttribute("username", username);
-                return "real_time";
+    @GetMapping("/real_time")
+    public String real_time_page(@RequestParam(required = false) String username, Model m){
+        if(username != null){
+            if(loggedIn.containsKey(username)){
+                if(loggedIn.get(username)){
+                    m.addAttribute("username", username);
+                    return "real_time";
+                }
             }
         }
         return "home";
@@ -101,12 +100,14 @@ public class RestController {
     }
     
     
-    @RequestMapping("/stored/{username}")
-    public String stored_page(Model m){
-        if(loggedIn.containsKey(username)){
-            if(loggedIn.get(username)){
-                m.addAttribute("username", username);
-                return "stored_data";
+    @GetMapping("/stored")
+    public String stored_page(@RequestParam(required = false) String username, Model m){
+        if(username != null){
+            if(loggedIn.containsKey(username)){
+                if(loggedIn.get(username)){
+                    m.addAttribute("username", username);
+                    return "stored_data";
+                }
             }
         }
         return "redirect:home";
