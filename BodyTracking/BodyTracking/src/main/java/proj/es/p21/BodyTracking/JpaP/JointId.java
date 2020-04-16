@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proj.es.p21.JpaP;
+package proj.es.p21.BodyTracking.JpaP;
 
 import java.io.Serializable;
 

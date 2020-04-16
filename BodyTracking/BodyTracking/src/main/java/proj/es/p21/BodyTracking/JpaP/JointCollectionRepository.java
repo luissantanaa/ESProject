@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proj.es.p21.JpaP;
+package proj.es.p21.BodyTracking.JpaP;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -11,6 +11,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
  *
  * @author alexandre
  */
-public interface UsersRepository extends JpaRepository<User, String> {
+public interface JointCollectionRepository extends JpaRepository<JointCollection, String> {
     
 }

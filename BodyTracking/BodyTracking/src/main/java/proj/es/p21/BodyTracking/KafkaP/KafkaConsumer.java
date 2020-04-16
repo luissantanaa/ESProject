@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proj.es.p21.KafkaP;
+package proj.es.p21.BodyTracking.KafkaP;
 
 import java.io.IOException;
 import org.slf4j.Logger;
@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.kafka.core.KafkaTemplate;
-import proj.es.p21.JpaP.JointCollectionRepository;
+import proj.es.p21.BodyTracking.JpaP.JointCollectionRepository;
 
 /**
  *

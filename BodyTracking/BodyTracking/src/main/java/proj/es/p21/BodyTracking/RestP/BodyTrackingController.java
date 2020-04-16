@@ -3,28 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proj.es.p21.RestP;
+package proj.es.p21.BodyTracking.RestP;
 
 import java.lang.ProcessBuilder.Redirect;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import proj.es.p21.JpaP.JointCollectionRepository;
-import proj.es.p21.JpaP.LoggerRep;
-import proj.es.p21.JpaP.User;
-import proj.es.p21.JpaP.UsersRepository;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import proj.es.p21.BodyTracking.JpaP.JointCollectionRepository;
+import proj.es.p21.BodyTracking.JpaP.User;
+import proj.es.p21.BodyTracking.JpaP.UsersRepository;
 /**
  *
  * @author alexandre
  */
 
 @Controller
-public class RestController {
+public class BodyTrackingController {
 
-    private HashMap<String, Boolean> loggedIn = new HashMap<String, Boolean>();
+    private HashMap<String, Boolean> loggedIn = new HashMap<>();
     
     @Autowired
     UsersRepository usersRep;
@@ -34,62 +40,80 @@ public class RestController {
     
     
     //user kafka appender para depois meter isto automatico
-    @Autowired
-    LoggerRep logRep;
+    //@Autowired
+    //LoggerRep logRep;
+    
+    
 
-
-    @GetMapping("/home")
+    
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String get_home(@RequestParam(required = false) String username , Model m){
         if(username != null){    
-            model.addAttribute("username", username);
+            m.addAttribute("username", username);
         }
-        return "index.html";
+        return "index";
     }
 
     
     
-    @GetMapping("/login")
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String get_login(Model m){
-        return "login";
+        m.addAttribute("user", new User());
+        return "login_file";
     }
     
     
-    @PostMapping("/login")
+    
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute User user, Model m){
-        User user_tmp = usersRep.findById(user.getUsername());
-        if(user_tmp.getPass().equals(user.getPass())){
+        
+        Optional<User> optional_user = usersRep.findById(user.getUsername());
+        User user_tmp = optional_user.get();
+        System.out.print(user_tmp.toString());
+        if(user_tmp.getPassword().equals(user.getPassword())){
             loggedIn.put(user.getUsername(), true);
             m.addAttribute("username", user.getUsername());
+            
+            System.out.println("AQUI");
         }
-
-        return "home";
+        
+        return "index";
     }
     
     
-    @GetMapping("/signin")
+    @RequestMapping(value = "/signup", method = RequestMethod.GET)
     public String get_sign(Model m){
+        m.addAttribute("user", new User());
+        
+        List<User> list_u = usersRep.findAll();
+        
+        for(User u : list_u){
+            System.out.print(u.toString());
+        }
         return "register";
     }
     
     
-    @PostMapping("/signin")
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String sign(@ModelAttribute User user){
         usersRep.save(user);
-        return "login";
+        return "redirect:login";
     }
     
     
-    @GetMapping("/real_time")
+    @RequestMapping(value = "/real_time", method = RequestMethod.GET)
     public String real_time_page(@RequestParam(required = false) String username, Model m){
+        System.out.print(username);
         if(username != null){
             if(loggedIn.containsKey(username)){
                 if(loggedIn.get(username)){
+                    
                     m.addAttribute("username", username);
                     return "real_time";
                 }
             }
         }
-        return "home";
+        return "redirect:home";
         
     }
     
@@ -100,7 +124,7 @@ public class RestController {
     }
     
     
-    @GetMapping("/stored")
+    @RequestMapping(value = "/stored", method = RequestMethod.GET)
     public String stored_page(@RequestParam(required = false) String username, Model m){
         if(username != null){
             if(loggedIn.containsKey(username)){

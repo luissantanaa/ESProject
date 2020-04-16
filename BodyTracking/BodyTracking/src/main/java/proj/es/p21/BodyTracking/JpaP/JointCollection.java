@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proj.es.p21.JpaP;
+package proj.es.p21.BodyTracking.JpaP;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
@@ -27,6 +28,7 @@ public class JointCollection implements Comparable<JointCollection>, Serializabl
     private String name;
     @Id 
     private String date_reading;
+    @ElementCollection
     List<PairXY> positions = new ArrayList();
 
     public JointCollection(){}

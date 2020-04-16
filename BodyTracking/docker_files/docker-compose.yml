@@ -9,7 +9,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: projetoes
-      MYSQL_DATABASE: jointCollection
+      MYSQL_DATABASE: ProjetoEs
     ports:
       - 3306:3306
 
