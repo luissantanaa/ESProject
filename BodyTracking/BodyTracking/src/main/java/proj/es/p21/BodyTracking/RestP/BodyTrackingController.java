@@ -6,6 +6,7 @@
 package proj.es.p21.BodyTracking.RestP;
 
 import java.lang.ProcessBuilder.Redirect;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -19,7 +20,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import proj.es.p21.BodyTracking.JpaP.JointCollection;
 import proj.es.p21.BodyTracking.JpaP.JointCollectionRepository;
+import proj.es.p21.BodyTracking.JpaP.SortedUser;
 import proj.es.p21.BodyTracking.JpaP.User;
 import proj.es.p21.BodyTracking.JpaP.UsersRepository;
 /**
@@ -117,6 +120,23 @@ public class BodyTrackingController {
         
     }
     
+    @RequestMapping(value = "/real_time", method = RequestMethod.GET)
+    public String real_time_sort(@RequestParam(required = false) String username, Model m){
+        System.out.print(username);
+        if(username != null){
+            if(loggedIn.containsKey(username)){
+                if(loggedIn.get(username)){
+                    
+                    m.addAttribute("username", username);
+                    return "real_time";
+                }
+            }
+        }
+        return "redirect:home";
+        
+    }
+    
+
     
     @RequestMapping("/real_time/data")
     public String real_time_socket(){
@@ -130,6 +150,27 @@ public class BodyTrackingController {
             if(loggedIn.containsKey(username)){
                 if(loggedIn.get(username)){
                     m.addAttribute("username", username);
+                    List<JointCollection> tmp_list = jointsRep.findAll();
+                    List<SortedUser> users_sorted = new ArrayList<>();
+                    for(JointCollection j : tmp_list){
+                        if(users_sorted.isEmpty()){
+                            users_sorted.add(new SortedUser(j.getName(), j.getDate_reading_day()));
+                        }else{
+                            boolean equals = false;
+                            for(SortedUser s: users_sorted){
+                                if(s.equals(new SortedUser(j.getName(), j.getDate_reading_day()))){
+                                    equals = true;
+                                    break;
+                                }
+                            }
+
+                            if(!equals){
+                                users_sorted.add(new SortedUser(j.getName(), j.getDate_reading_day()));
+                            }
+                        }
+                    }
+                    
+                    m.addAttribute("readings", users_sorted);
                     return "stored_data";
                 }
             }
@@ -138,6 +179,36 @@ public class BodyTrackingController {
         
     }
     
+    
+    
+    @RequestMapping(value = "/stored/filtered", method = RequestMethod.GET)
+    public String stored_page(@RequestParam(required = true) String username, @RequestParam(required = true) String patient, @RequestParam(required = true) String date, Model m){
+        
+        if(loggedIn.containsKey(username)){
+            if(loggedIn.get(username)){
+                m.addAttribute("username", username);
+                
+                List<JointCollection> tmp_list = jointsRep.findAll();
+                List<JointCollection> coords_list = new ArrayList<>();
+                
+                for(JointCollection j : tmp_list){
+                    if(j.getName().equals(patient) && j.getDate_reading_day().equals(date)){
+                        coords_list.add(j);
+                    }
+                }
+                
+                m.addAttribute("patient", patient);
+                
+                m.addAttribute("date", date);
+                m.addAttribute("moves", coords_list);
+                
+                return "stored_data";
+            }
+        }
+        
+        return "redirect:home";
+        
+    }
     
     @RequestMapping("/stored/data")
     public String stored_info(Model m){

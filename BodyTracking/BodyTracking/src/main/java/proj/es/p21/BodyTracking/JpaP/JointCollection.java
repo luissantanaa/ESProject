@@ -27,25 +27,14 @@ public class JointCollection implements Comparable<JointCollection>, Serializabl
     @Id 
     private String name;
     @Id 
-    private String date_reading;
+    private String date_reading_day;
+    @Id 
+    private String date_reading_time;
+    
     @ElementCollection
     List<PairXY> positions = new ArrayList();
 
     public JointCollection(){}
-    
-    
-    public JointCollection(String name, String date){
-        this.name = name;
-        this.date_reading = date;
-    }
-
-     public String getDate(){
-        return date_reading;
-    }
-    
-    public void setDate(String date){
-        this.date_reading = date;
-    }
 
     public String getName() {
         return name;
@@ -54,14 +43,33 @@ public class JointCollection implements Comparable<JointCollection>, Serializabl
     public void setName(String name) {
         this.name = name;
     }
-    
-    public void setPositions(List<PairXY> positions){
+
+    public String getDate_reading_day() {
+        return date_reading_day;
+    }
+
+    public void setDate_reading_day(String date_reading_day) {
+        this.date_reading_day = date_reading_day;
+    }
+
+    public String getDate_reading_time() {
+        return date_reading_time;
+    }
+
+    public void setDate_reading_time(String date_reading_time) {
+        this.date_reading_time = date_reading_time;
+    }
+
+
+    public List<PairXY> getPositions() {
+        return positions;
+    }
+
+    public void setPositions(List<PairXY> positions) {
         this.positions = positions;
     }
     
-    public List<PairXY> getPositions(){
-        return this.positions;
-    }
+    
 
     @Override
     public int compareTo(JointCollection t) {

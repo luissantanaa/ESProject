@@ -6,6 +6,9 @@
 package proj.es.p21.BodyTracking.KafkaP;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 
 import org.slf4j.LoggerFactory;
@@ -14,7 +17,9 @@ import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.kafka.core.KafkaTemplate;
+import proj.es.p21.BodyTracking.JpaP.JointCollection;
 import proj.es.p21.BodyTracking.JpaP.JointCollectionRepository;
+import proj.es.p21.BodyTracking.JpaP.PairXY;
 
 /**
  *
@@ -30,9 +35,23 @@ public class KafkaConsumer {
     JointCollectionRepository jointsRep;
     
      
-    @KafkaListener(topics = "", groupId = "") //topico e groupID
-    public void consumeJointReadings(String message) throws IOException{
-        logger.info(String.format("%s", message));
+    @KafkaListener(topics = "joints", groupId = "") //topico e groupID
+    public void consumeJointReadings(JSONObject jsonO) throws IOException{
+        
+        
+        
+        String username = (String) jsonO.get("username");
+        String date_reading = (String) jsonO.get("date_reading");
+        List<PairXY> jointC = (ArrayList) jsonO.get("joints");
+        
+        JointCollection JC = new JointCollection();
+        
+        JC.setName(username);
+        JC.setDate_reading_day(date_reading.split("-")[0]);
+        JC.setDate_reading_time(date_reading.split("-")[1]);
+        JC.setPositions(jointC);
+        jointsRep.save(JC);
+
     }
     
     

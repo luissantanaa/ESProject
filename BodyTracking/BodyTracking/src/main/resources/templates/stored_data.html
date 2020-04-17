@@ -7,51 +7,33 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
         <title>Real Time Movement</title>
         <script src="./js/sockjs-0.3.4.js"></script>
         <script src="./js/stomp.js"></script>
-        <script type="text/javascript">
-             
-            var stompClient = null;
-             
-            function setConnected(connected) {
-                document.getElementById('connect').disabled = connected;
-                document.getElementById('disconnect').disabled = !connected;
-            }
-             
-            function connect() {
-                var socket = new SockJS('/stored/data');
-                stompClient = Stomp.over(socket);  
-                stompClient.connect({}, function(frame) {
-                    setConnected(true);
-                    console.log('Connected: ' + frame);
-                    stompClient.subscribe('/topic/messages', function(messageOutput) {
-                        showMessageOutput(JSON.parse(messageOutput.body));
-                    });
-                });
-
-                disconnect();
-            }
-             
-            function disconnect() {
-                if(stompClient != null) {
-                    stompClient.disconnect();
-                }
-                setConnected(false);
-                console.log("Disconnected");
-            }
-             
+        <script>
+            var start = true;
             
-            function showMessageOutput(messageOutput) {
+            function start_animation(){
+                start=false;
+                document.getElementById("connect").disabled = start;
+                
+                
                 var cv = document.getElementById("canvas");
                 var cv_ctx = cv.getContext("2d");
-                ctx.fillStyle = "#0FF000";
-                var jPos = messageOutput["jointPos"];
-                for(var i =0;i< jPos.lenght;i++){
-                    ctx.beginPath();
-                    ctx.arc(jPos[i][0], jPos[i][1], 5, 0, 2 * Math.PI);
-                    ctx.closePath();
-                    ctx.fill();   
+                cv_ctx.clearRect(0,0,cv.width, cv.height);
+                cv_ctx.fillStyle="#000000";
+                cv_ctx.fillRect(0,0,cv.width, cv.height);
+                cv_ctx.fillStyle = "#0FF000";
+                
+                for(var j= 0; j< [[$moves]].lenght; j++){
+                    console.log([[$moves]]);
+                    var jPos = [[$moves]][i]
+                    for(var i =0;i< jPos.lenght;i++){
+                        cv_ctx.beginPath();
+                        cv_ctx.arc(jPos[i][0], jPos[i][1], 5, 0, 2 * Math.PI);
+                        cv_ctx.closePath();
+                        cv_ctx.fill();   
+                    }
                 }
+                
             }
-            
         </script>
         <style>
             ul {
@@ -109,19 +91,49 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
             </ul>
         </div>
-        <div>
-            <div>
-                <h3>Person Stored Movement</h3>
-            </div>
-            <div><canvas id="canvas" onload="fill()" width="600" height="400"></canvas></div>
-            <br />
-            <div>
-                <button id="connect" onclick="connect();">Show Movement</button>
+            <div class="row">
+                <div class="col-md-9">
+                    <div>
+                    <h3>Person Stored Movement</h3>
+                    </div>
+                    <div><canvas id="canvas" onload="fill()" width="600" height="400"></canvas></div>
+                    <br />
+                    <div>
+                        <button id="connect" onclick="start_animation();">Show Movement</button>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    
+                    <p  th:text="#{patient}"></p>
+                    <br/>
+                    <p  th:text="#{date}"></p>
+                    
+                    <form action="#" th:action="@{/stored}" id ="stored_form" method="get">
+                        <input type="hidden" th:name = "username" th:value = "${username}" />
+                        <label for="it" >Iterations:</label>
+                        <input type="number" id = "it" value="iterations"/>    
+                        
+                        <label for="usernames" >User:</label>
+                        <select id = "usernames" th:name="patient">
+                           <option th:each="i : ${readings}" th:value="${i.username}" th:text="${i.username}"></option>
+                        </select>
+                        
+                        
+                        <label for="dates" >Date:</label>
+                        <select if ="dates" th:name="date">
+                           <option th:each="i : ${readings}" th:value="${i.date_reading}" th:text="${i.date_reading}"></option>
+                        </select>
+                        
+                        
+                        <input type="submit" value = "Submit">
+                        
+                    </form>
+                    
+                </div>
                 
-                
-            </div>
-            <br />
-            
+                <br />
+            </div>   
+
         </div>
         <script>
         
@@ -154,6 +166,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
             ctx.arc(coordx, coordy, 5, 0, 2 * Math.PI);
             ctx.closePath();
             ctx.fill();
+            
             
         </script>
     </body>
