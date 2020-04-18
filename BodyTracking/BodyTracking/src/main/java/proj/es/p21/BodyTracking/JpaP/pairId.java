@@ -11,12 +11,11 @@ import java.io.Serializable;
  *
  * @author alexandre
  */
-public class JointId implements Serializable{
+public class pairId implements Serializable{
     
-    private String name;
-    private String date_reading_day;
-    private String date_reading_time;
-    
+    private float x;
+    private float y;
+    private String id_pair;
     
     @Override
     public boolean equals(Object o) {

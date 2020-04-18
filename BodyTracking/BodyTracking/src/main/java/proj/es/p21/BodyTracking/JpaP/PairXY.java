@@ -7,7 +7,12 @@ package proj.es.p21.BodyTracking.JpaP;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -15,7 +20,13 @@ import javax.persistence.Id;
  */
 
 @Entity
+
+@IdClass(pairId.class)
 public class PairXY implements Serializable{
+    
+    
+    @Id
+    private String id_pair;
     @Id
     private float x;
     @Id
@@ -28,11 +39,35 @@ public class PairXY implements Serializable{
         this.y = y;
     }
     
-    public float getX(){
-        return this.x;
+    
+    public String getId() {
+        return id_pair;
+    }
+
+    public void setId(String id) {
+        this.id_pair= id;
+    }
+
+    public float getX() {
+        return x;
+    }
+
+    public void setX(float x) {
+        this.x = x;
+    }
+
+    public float getY() {
+        return y;
+    }
+
+
+    public void setY(float y) {
+        this.y = y;
+    }
+
+    @Override
+    public String toString() {
+        return "PairXY{" + "x=" + x + ", y=" + y + '}';
     }
     
-    public float getY(){
-        return this.y;
-    }
 }

@@ -120,21 +120,7 @@ public class BodyTrackingController {
         
     }
     
-    @RequestMapping(value = "/real_time", method = RequestMethod.GET)
-    public String real_time_sort(@RequestParam(required = false) String username, Model m){
-        System.out.print(username);
-        if(username != null){
-            if(loggedIn.containsKey(username)){
-                if(loggedIn.get(username)){
-                    
-                    m.addAttribute("username", username);
-                    return "real_time";
-                }
-            }
-        }
-        return "redirect:home";
-        
-    }
+    
     
 
     
@@ -182,7 +168,7 @@ public class BodyTrackingController {
     
     
     @RequestMapping(value = "/stored/filtered", method = RequestMethod.GET)
-    public String stored_page(@RequestParam(required = true) String username, @RequestParam(required = true) String patient, @RequestParam(required = true) String date, Model m){
+    public String stored_page_sorted(@RequestParam(required = true) String username, @RequestParam(required = true) String patient, @RequestParam(required = true) String date, Model m){
         
         if(loggedIn.containsKey(username)){
             if(loggedIn.get(username)){

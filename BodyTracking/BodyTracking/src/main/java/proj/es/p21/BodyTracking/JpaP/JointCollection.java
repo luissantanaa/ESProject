@@ -12,6 +12,7 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
+import javax.transaction.Transactional;
 
 /**
  *
@@ -30,10 +31,10 @@ public class JointCollection implements Comparable<JointCollection>, Serializabl
     private String date_reading_day;
     @Id 
     private String date_reading_time;
+    @Id
+    private String id;
     
-    @ElementCollection
-    List<PairXY> positions = new ArrayList();
-
+    
     public JointCollection(){}
 
     public String getName() {
@@ -60,14 +61,20 @@ public class JointCollection implements Comparable<JointCollection>, Serializabl
         this.date_reading_time = date_reading_time;
     }
 
-
-    public List<PairXY> getPositions() {
-        return positions;
+    public String getId() {
+        return id;
     }
 
-    public void setPositions(List<PairXY> positions) {
-        this.positions = positions;
+    public void setId(String id) {
+        this.id = id;
     }
+
+    @Override
+    public String toString() {
+        return "JointCollection{" + "name=" + name + ", date_reading_day=" + date_reading_day + ", date_reading_time=" + date_reading_time + ", id=" + id + '}';
+    }
+
+   
     
     
 
