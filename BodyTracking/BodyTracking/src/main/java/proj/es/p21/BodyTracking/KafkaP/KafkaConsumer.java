@@ -8,6 +8,7 @@ package proj.es.p21.BodyTracking.KafkaP;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 import org.hibernate.Hibernate;
@@ -20,6 +21,7 @@ import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import proj.es.p21.BodyTracking.JpaP.JointCollection;
 import proj.es.p21.BodyTracking.JpaP.JointCollectionRepository;
 import proj.es.p21.BodyTracking.JpaP.PairXY;
@@ -39,7 +41,10 @@ public class KafkaConsumer {
     //automatically send to database
     @Autowired
     JointCollectionRepository jointsRep;
-    
+		
+    @Autowired
+    SimpMessagingTemplate template;    
+
     @Autowired
     PairXYRepository pairRep;
      
@@ -63,6 +68,10 @@ public class KafkaConsumer {
         String listJoints =  (String) jsonO.get("joints");
         String[] pos = listJoints.split(",");
         
+	HashMap<String,String> toSend = new HashMap<String,String>();	
+        toSend.put(username, listJoints);
+	template.convertAndSend("/topic/movement",toSend);
+
         JointCollection JC = new JointCollection();
         
         JC.setName(username);
