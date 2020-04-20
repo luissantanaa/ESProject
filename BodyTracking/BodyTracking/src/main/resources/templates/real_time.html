@@ -30,8 +30,11 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
               background-color: #111;
             }
         </style>
-        <script src="./js/sockjs-0.3.4.js"></script>
-        <script src="./js/stomp.js"></script>
+        <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+        <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+
+        
+
         <script type="text/javascript">
              
             var stompClient = null;
@@ -47,7 +50,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                 stompClient.connect({}, function(frame) {
                     setConnected(true);
                     console.log('Connected: ' + frame);
-                    stompClient.subscribe('/topic/messages', function(messageOutput) {
+                    stompClient.subscribe('/esp21_topic/movement', function(messageOutput) {
                         showMessageOutput(JSON.parse(messageOutput.body));
                     });
                 });
@@ -70,10 +73,18 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                 cv_ctx.fillStyle="#000000";
                 cv_ctx.fillRect(0,0,cv.width, cv.height);
                 cv_ctx.fillStyle = "#0FF000";
-                var jPos = messageOutput["jointPos"];
-                for(var i =0;i< jPos.lenght;i++){
+                var jPos = messageOutput["JointPos"];
+                
+                console.log(jPos);
+                jPos = jPos.split(",");
+                var Jpos_tmp;
+                
+                console.log(jPos);
+                for(var i =0;i< jPos.length;i++){
+                    Jpos_tmp = jPos[i].split(";");
                     cv_ctx.beginPath();
-                    cv_ctx.arc(jPos[i][0], jPos[i][1], 5, 0, 2 * Math.PI);
+                    console.log(Jpos_tmp);
+                    cv_ctx.arc(parseFloat(Jpos_tmp[0]), parseFloat(Jpos_tmp[1]), 5, 0, 2 * Math.PI);
                     cv_ctx.closePath();
                     cv_ctx.fill();   
                 }
@@ -141,7 +152,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
             function submit_stored(){
             document.getElementById("stored_form").submit();
             }
-        
+            /*
             var c = document.getElementById("canvas");
             var ctx = c.getContext("2d");
             ctx.fillStyle = "#000000";
@@ -173,7 +184,13 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                     
                 }
                 
+                
             }
+      
+     
+             */
+            
+            
 
         </script>
     </body>

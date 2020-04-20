@@ -48,12 +48,9 @@ public class KafkaConsumer {
     @Autowired
     PairXYRepository pairRep;
      
-    @KafkaListener(topics = "joints", groupId = "group_id") //topico e groupID
+    @KafkaListener(topics = "esp21_joints", groupId = "group_id") //topico e groupID
     public void consumeJointReadings(JSONObject jsonO) throws IOException{
         
-        for(JointCollection j : jointsRep.findAll()){
-            System.out.print(j.toString());
-        }
         
         byte[] array = new byte[30]; // length is bounded by 30
         new Random().nextBytes(array);
@@ -69,8 +66,9 @@ public class KafkaConsumer {
         String[] pos = listJoints.split(",");
         
 	HashMap<String,String> toSend = new HashMap<String,String>();	
-        toSend.put(username, listJoints);
-	template.convertAndSend("/topic/movement",toSend);
+        toSend.put("username", username);
+        toSend.put("JointPos", listJoints);
+	template.convertAndSend("/esp21_topic/movement",toSend);
 
         JointCollection JC = new JointCollection();
         
@@ -82,14 +80,14 @@ public class KafkaConsumer {
         
         for(String x : pos){
             PairXY tmp_xy = new PairXY();
-            x= x.replace("[", "");
-            x= x.replace("]", "");
+            //x= x.replace("[", "");
+            //x= x.replace("]", "");
             
             String[] xy = x.split(";");
             
-            tmp_xy.setX(Integer.parseInt(xy[0]));
+            tmp_xy.setX(Float.parseFloat(xy[0]));
             
-            tmp_xy.setY(Integer.parseInt(xy[1]));
+            tmp_xy.setY(Float.parseFloat(xy[1]));
             
             tmp_xy.setId(generatedString);
             
