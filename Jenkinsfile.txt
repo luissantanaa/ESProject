@@ -10,8 +10,6 @@ pipeline {
         }
         stage('Clean and Build') {
             steps {
-                //fetch project from github
-                git url: 'https://github.com/luissantanaa/ESProject.git'
                 //clean maven project and create war file
                 sh "cd BodyTracking/BodyTracking/ && mvn clean package "
                 
