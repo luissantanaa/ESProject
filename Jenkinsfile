@@ -30,7 +30,6 @@ pipeline {
         }
 
         stage('Deploy') {
-            agent any
             sshagent (credentials: ['comoassim']) {
                 steps {
                 //scp DockerFile to runtime vm
@@ -38,17 +37,17 @@ pipeline {
                 //Execute commands to create and run docker container in the runtime vm
                  
                     
-                sh '''    
-                    scp DockerFile esp21@192.168.160.103:~
-                    scp /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~
-                    ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker build -t esp21BodyTrackingBuild .
-                    ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21BodyTrackingContainer || echo "container down"
-                    ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21999 -d esp21BodyTrackingContainer esp21BodyTrackingBuild
-                    ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 rm DockerFile
-                    ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 rm war_file
-                    
-                    
-                '''
+                    sh '''    
+                        scp DockerFile esp21@192.168.160.103:~
+                        scp /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker build -t esp21BodyTrackingBuild .
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21BodyTrackingContainer || echo "container down"
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21999 -d esp21BodyTrackingContainer esp21BodyTrackingBuild
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 rm DockerFile
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 rm war_file
+                        
+                        
+                    '''
                 }
             }
         }
