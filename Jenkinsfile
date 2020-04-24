@@ -10,7 +10,7 @@ pipeline {
         stage('Clean and Build') {
             steps {
                 //clean maven project and create war file
-                sh "cd BodyTracking/BodyTracking/ && mvn clean package "
+                sh "cd BodyTracking/BodyTracking/ && mvn clean -Dmaven.test.skip package "
             }
                 
         }
