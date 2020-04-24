@@ -38,6 +38,7 @@ pipeline {
                 
                 sshagent (credentials: ['comoassim']) {
                     sh 'echo "$(which scp)"'
+                    sh 'apt install -y openssh-client openssh-server'
                     sh '''    
                         scp -o StrictHostKeyChecking=no DockerFile esp21@192.168.160.103:~
                         scp -o StrictHostKeyChecking=no /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~
