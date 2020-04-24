@@ -1,13 +1,13 @@
 pipeline {
-    agent{
-        docker{
-            image 'maven:3-alpine'
-            args '-v $HOME/.m2:/root/.m2'
-        }
-    }
     stages {
         
         stage('Clean and Build') {
+            agent{
+                docker{
+                    image 'maven:3-alpine'
+                    args '-v $HOME/.m2:/root/.m2'
+                }
+            }
             steps {
                 //clean maven project and create war file
                 sh "cd BodyTracking/BodyTracking/ && mvn clean -Dmaven.test.skip package "
@@ -15,8 +15,10 @@ pipeline {
                 
         }
         stage('Test') {
+            agent { docker 'openjdk:8-jre' } 
             steps {
-                echo "Tests Running"
+                echo 'Hello, JDK'
+                sh 'java -version'
             }
         }
 
@@ -34,14 +36,13 @@ pipeline {
             //scp DockerFile to runtime vm
             //scp war file to runtime vm
             //Execute commands to create and run docker container in the runtime vm
-                sh '''
-                    echo "$(which scp)"
-                    scp -o StrictHostKeyChecking=no DockerFile esp21@192.168.160.103:~
-                    scp -o StrictHostKeyChecking=no /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~
-                        
-                '''
                 sshagent (credentials: ['RuntimeVMCredP21']) {
-                    
+                    sh '''
+                        echo "$(which scp)"
+                        scp -o StrictHostKeyChecking=no DockerFile esp21@192.168.160.103:~
+                        scp -o StrictHostKeyChecking=no /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~        
+                    '''
+                
                     sh '''    
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker build -t esp21BodyTrackingBuild .
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21BodyTrackingContainer || echo "container down"
