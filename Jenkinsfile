@@ -12,6 +12,7 @@ pipeline {
             steps {
                 //clean maven project and create war file
                 sh "cd BodyTracking/BodyTracking/ && mvn clean package "
+            }
                 
         }
         stage('Test') {
@@ -24,7 +25,7 @@ pipeline {
             steps{
                 //send war and pom to artifact
                 //sh "mvn deploy"
-		echo "deploying..."
+		        echo "deploying..."
             }
 
         }
