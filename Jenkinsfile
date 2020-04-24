@@ -41,7 +41,7 @@ pipeline {
                     sh '''
                         echo "$(which scp)"
                         scp -o StrictHostKeyChecking=no Dockerfile esp21@192.168.160.103:~
-                        scp -o StrictHostKeyChecking=no /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~        
+                        scp -o StrictHostKeyChecking=no BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~        
                     '''
                 
                     sh '''    
