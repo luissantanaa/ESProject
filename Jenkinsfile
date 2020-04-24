@@ -45,7 +45,7 @@ pipeline {
                     '''
                 
                     sh '''    
-                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker build -t esp21BodyTrackingBuild .
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker build -t esp21BodyTrackingBuild:latest .
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21BodyTrackingContainer || echo "container down"
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21999 -d esp21BodyTrackingContainer esp21BodyTrackingBuild
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 rm DockerFile
