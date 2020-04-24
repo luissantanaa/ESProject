@@ -22,7 +22,7 @@ pipeline {
 
         stage('Pre-Deploy'){
             steps{
-                /send war and pom to artifact
+                //send war and pom to artifact
                 //sh "mvn deploy"
 		echo "deploying..."
             }
