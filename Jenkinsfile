@@ -36,9 +36,8 @@ pipeline {
             //scp war file to runtime vm
             //Execute commands to create and run docker container in the runtime vm
                 
-                sshagent (credentials: ['comoassim']) {
+                sshagent (credentials: ['RuntimeVMCredP21']) {
                     sh 'echo "$(which scp)"'
-                    sh 'apt install -y openssh-client openssh-server'
                     sh '''    
                         scp -o StrictHostKeyChecking=no DockerFile esp21@192.168.160.103:~
                         scp -o StrictHostKeyChecking=no /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~
