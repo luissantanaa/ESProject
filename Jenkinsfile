@@ -39,8 +39,8 @@ pipeline {
                 sshagent (credentials: ['comoassim']) {
             
                     sh '''    
-                        scp DockerFile esp21@192.168.160.103:~
-                        scp /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~
+                        scp -o StrictHostKeyChecking=no DockerFile esp21@192.168.160.103:~
+                        scp -o StrictHostKeyChecking=no /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker build -t esp21BodyTrackingBuild .
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21BodyTrackingContainer || echo "container down"
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21999 -d esp21BodyTrackingContainer esp21BodyTrackingBuild
@@ -51,6 +51,20 @@ pipeline {
                     '''
                 }
             }
+        }
+    }
+    post {
+        success {
+            echo 'Pipeline was successful'
+        }
+        failure {
+            echo 'Pipeline failed'
+        }
+        unstable {
+            echo 'Pipeline was marked as unstable'
+        }
+        changed {
+            echo 'Pipeline state changed'
         }
     }
 }
