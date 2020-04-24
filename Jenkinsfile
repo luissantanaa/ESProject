@@ -30,13 +30,14 @@ pipeline {
         }
 
         stage('Deploy') {
-            sshagent (credentials: ['comoassim']) {
-                steps {
-                //scp DockerFile to runtime vm
-                //scp war file to runtime vm
-                //Execute commands to create and run docker container in the runtime vm
-                 
-                    
+            agent any
+            steps {
+            //scp DockerFile to runtime vm
+            //scp war file to runtime vm
+            //Execute commands to create and run docker container in the runtime vm
+                
+                sshagent (credentials: ['comoassim']) {
+            
                     sh '''    
                         scp DockerFile esp21@192.168.160.103:~
                         scp /BodyTracking/BodyTracking/target/BodyTracking-0.0.1-SNAPSHOT.war esp21@192.168.160.103:~
