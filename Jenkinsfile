@@ -30,7 +30,6 @@ pipeline {
         }
 
         stage('Deploy') {
-            agent any
             steps {
             //scp DockerFile to runtime vm
             //scp war file to runtime vm
