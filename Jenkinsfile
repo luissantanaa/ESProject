@@ -16,14 +16,19 @@ pipeline {
                 
         }
         stage('Test') {
-            agent { docker 'openjdk:8-jre' } 
+            docker{
+                image 'maven:3-alpine'
+                args '-v $HOME/.m2:/root/.m2'
+            }
             steps {
                 echo 'Hello, JDK'
                 sh 'java -version'
+                //sh 'mvn verify'
             }
         }
 
         stage('Pre-Deploy'){
+            agent any
             steps{
                 //send war and pom to artifact
                 //sh "mvn deploy"
@@ -31,7 +36,15 @@ pipeline {
             }
 
         }
-
+        /*
+        stage('Clean Registry'){
+            agent any
+            steps{
+                sh 'docker image rm 192.168.160.103:5000/p21/esp21bodytrackingbuild:latest || echo "Registry cleaned"
+            }
+        }
+        
+        */
         stage('Deploy') {
             steps {
             //scp DockerFile to runtime vm
@@ -54,6 +67,25 @@ pipeline {
                         
                     '''
                 }
+
+                /*
+
+                //Using docker registry to save docker image
+                agent any
+                sh  '''
+                        docker build -t esp21bodytrackingBuild:latest  .
+                        docker tag  esp21bodytrackingcontainer:latest 192.168.160.99:5000/p21/esp21bodytrackingBuild:latest
+                        docker push esp21bodytrackingcontainer:latest                        
+                        
+                    '''
+                sshagent (credentials: ['RuntimeVMCredP21']) {
+                    sh '''
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21bodytrackingcontainerR || echo "container down"
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker pull 192.168.160.99:5000/p21/esp21bodytrackingcontainer:latest
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21999 -d --name esp21bodytrackingcontainerR esp21bodytrackingcontainer:latest 
+                    '''
+                }
+                */
             }
         }
     }
