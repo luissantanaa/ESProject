@@ -33,7 +33,7 @@ pipeline {
             agent any
             steps{
                 //send war and pom to artifact
-                //sh "mvn deploy"
+                sh "mvn deploy -f BodyTracking/BodyTracking/pom.xml -s BodyTracking/settings.xml"
 		        echo "deploying..."
             }
 
