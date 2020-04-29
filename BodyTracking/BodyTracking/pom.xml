@@ -104,7 +104,7 @@
                  <type>jar</type>
                 </dependency>
 	</dependencies>
-        <!--
+        
         <distributionManagement>
             <repository>
                 <id>central</id>
@@ -112,7 +112,7 @@
                 <url>http://192.168.160.99:8081/artifactory/libs-release-local</url>
             </repository>
         </distributionManagement>
-        -->
+        
 	
     <build>
 		<plugins>
