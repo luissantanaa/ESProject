@@ -23,9 +23,8 @@ pipeline {
                 }
             }
             steps {
-                echo 'Hello, JDK'
-                sh 'java -version'
-                //sh 'mvn verify'
+                echo 'Testing phase is about to start'
+                sh 'cd BodyTracking/BodyTracking/ && mvn verify'
             }
         }
 
