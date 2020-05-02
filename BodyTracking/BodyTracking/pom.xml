@@ -66,12 +66,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
                 <dependency>
                         <groupId>org.apache.httpcomponents</groupId>
@@ -103,6 +97,32 @@
                  <version>2.2.3</version>
                  <type>jar</type>
                 </dependency>
+                
+                 <dependency>
+                    <groupId>info.cukes</groupId>
+                    <artifactId>cucumber-java</artifactId>
+                    <version>1.2.4</version>
+                    <type>jar</type>
+                </dependency>
+                <dependency>
+                    <groupId>info.cukes</groupId>
+                    <artifactId>cucumber-junit</artifactId>
+                    <version>1.2.4</version>
+                  <type>jar</type>
+                </dependency>
+                <dependency>
+                    <groupId>info.cukes</groupId>
+                    <artifactId>cucumber-spring</artifactId>
+                    <version>1.2.4</version>
+                    <scope>test</scope>
+                </dependency>
+                <dependency>
+                 <groupId>info.cukes</groupId>
+                 <artifactId>cucumber-core</artifactId>
+                 <version>1.2.4</version>
+                 <type>jar</type>
+                </dependency>
+                
 	</dependencies>
 
         <distributionManagement>
