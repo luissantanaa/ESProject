@@ -11,6 +11,7 @@ pipeline {
             }
             steps {
                 //clean maven project and create war file
+                sh "rm -r BodyTracking/BodyTracking/target/*"
                 sh "cd BodyTracking/BodyTracking/ && mvn clean -Dmaven.test.skip package "
             }
                 
