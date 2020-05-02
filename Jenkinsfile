@@ -88,7 +88,7 @@ pipeline {
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21999 -d --name esp21bodytrackingcontainerR esp21bodytrackingcontainer:latest 
                     '''
                 }
-                */
+            
             }
         }
     }
