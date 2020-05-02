@@ -68,6 +68,17 @@ pipeline {
             
             }
         }
+
+
+        stage("Clean WS"){
+            agent any
+            steps{
+                
+                sh 'cleanWs()'
+
+            }
+
+        }
     }
     post {
         success {
