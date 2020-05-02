@@ -52,6 +52,8 @@ pipeline {
             //scp DockerFile to runtime vm
             //scp war file to runtime vm
             //Execute commands to create and run docker container in the runtime vm
+                /*
+
                 sshagent (credentials: ['RuntimeVMCredP21']) {
                     sh '''
                         echo "$(which scp)"
@@ -70,8 +72,7 @@ pipeline {
                     '''
                 }
 
-                /*
-
+                */
                 //Using docker registry to save docker image
                 agent any
                 sh  '''
