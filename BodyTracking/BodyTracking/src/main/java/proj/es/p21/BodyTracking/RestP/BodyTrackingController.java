@@ -11,6 +11,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +36,9 @@ import proj.es.p21.BodyTracking.JpaP.UsersRepository;
 @Controller
 public class BodyTrackingController {
 
+
+    Logger logger = LogManager.getLogger(BodyTrackingController.class);
+
     private HashMap<String, Boolean> loggedIn = new HashMap<>();
     
     @Autowired
@@ -40,11 +46,6 @@ public class BodyTrackingController {
     
     @Autowired
     JointCollectionRepository jointsRep;
-    
-    
-    //user kafka appender para depois meter isto automatico
-    //@Autowired
-    //LoggerRep logRep;
     
     
 
@@ -76,9 +77,12 @@ public class BodyTrackingController {
         if(user_tmp.getPassword().equals(user.getPassword())){
             loggedIn.put(user.getUsername(), true);
             m.addAttribute("username", user.getUsername());
-            
+            logger.info("User " + user.getUsername() + " LOGIN successful");
             System.out.println("AQUI");
+        }else{
+            logger.warn("User " + user.getUsername() + " LOGIN failed");
         }
+
         
         return "index";
     }
@@ -100,6 +104,7 @@ public class BodyTrackingController {
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String sign(@ModelAttribute User user){
         usersRep.save(user);
+        logger.info("User " + user.getUsername() + " registed");
         return "redirect:login";
     }
     
