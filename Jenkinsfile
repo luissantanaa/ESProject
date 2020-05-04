@@ -55,7 +55,7 @@ pipeline {
                 sh  '''
                         docker build -t esp21bodytracking_build:latest  .
                         docker tag  esp21bodytracking_build:latest 192.168.160.99:5000/p21/esp21bodytracking_build:latest
-                        docker push esp21bodytracking_build:latest                        
+                        docker push 192.168.160.99:5000/p21/esp21bodytracking_build:latest                        
                         
                     '''
                 sshagent (credentials: ['RuntimeVMCredP21']) {
