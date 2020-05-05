@@ -48,7 +48,7 @@ public class KafkaConsumer {
     @Autowired
     PairXYRepository pairRep;
     
-    @KafkaListener(topics = "esp21_joints", groupId = "group_id") //topico e groupID
+    @KafkaListener(topics = "esp21_joints", groupId = "esp21_1") //topico e groupID
     public void consumeJointReadings(JSONObject jsonO) throws IOException{
         
         

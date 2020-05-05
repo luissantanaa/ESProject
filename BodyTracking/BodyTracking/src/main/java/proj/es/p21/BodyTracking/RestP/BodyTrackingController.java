@@ -77,10 +77,10 @@ public class BodyTrackingController {
         if(user_tmp.getPassword().equals(user.getPassword())){
             loggedIn.put(user.getUsername(), true);
             m.addAttribute("username", user.getUsername());
-            logger.info("User " + user.getUsername() + " LOGIN successful");
+            logger.debug("User " + user.getUsername() + " LOGIN successful");
             System.out.println("AQUI");
         }else{
-            logger.warn("User " + user.getUsername() + " LOGIN failed");
+            logger.debug("User " + user.getUsername() + " LOGIN failed");
         }
 
         
