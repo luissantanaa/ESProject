@@ -29,6 +29,6 @@ public class KafkaProducer {
     public void sendMessage(String message) {
         SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         Date date = new Date(System.currentTimeMillis());
-        this.kafkaTemplate.send(TOPIC,formatter.format(date) +"  -> " +  message);
+        this.kafkaTemplate.send(TOPIC, message);
     }
 }
