@@ -110,11 +110,11 @@ public class KafkaConsumer {
         if(message.contains("")){
             messageToSend = "Sensor are detecting " + message.split(":")[1] + " persons!" ;
         }else if(message.equals("1")){
-            messageToSend = "Left Arm UP!";
+            messageToSend = "Both Arms UP!";
         }else if(message.equals("2")){
-            messageToSend="Right Arm UP!";
+            messageToSend="Left Arms UP!";
         }else if(message.equals("3")){
-            messageToSend="Both Arms UP!";
+            messageToSend="Right Arms UP!";
         }else if(message.equals("4")){
             messageToSend="Handstand";
         }else{
