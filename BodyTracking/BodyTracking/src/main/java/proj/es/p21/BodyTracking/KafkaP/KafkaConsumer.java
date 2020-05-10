@@ -65,7 +65,7 @@ public class KafkaConsumer {
         String listJoints =  (String) jsonO.get("joints");
         String[] pos = listJoints.split(",");
         
-	    HashMap<String,String> toSend = new HashMap<String,String>();	
+	HashMap<String,String> toSend = new HashMap<String,String>();	
         toSend.put("username", username);
         toSend.put("JointPos", listJoints);
 	    template.convertAndSend("/esp21_topic/movement",toSend);
@@ -106,15 +106,17 @@ public class KafkaConsumer {
     
     @KafkaListener(topics = "esp21_alarms", groupId = "esp21_1") //topico e groupID
     public void consumeLogs(String message) throws IOException{
+        
+        System.out.println("ALARMS " +  message);
         String  messageToSend;
-        if(message.contains("")){
+        if(message.contains(":")){
             messageToSend = "Sensor are detecting " + message.split(":")[1] + " persons!" ;
         }else if(message.equals("1")){
             messageToSend = "Both Arms UP!";
         }else if(message.equals("2")){
-            messageToSend="Left Arms UP!";
+            messageToSend="Left Arm UP!";
         }else if(message.equals("3")){
-            messageToSend="Right Arms UP!";
+            messageToSend="Right Arm UP!";
         }else if(message.equals("4")){
             messageToSend="Handstand";
         }else{
@@ -124,7 +126,7 @@ public class KafkaConsumer {
 
         HashMap<String,String> toSend = new HashMap<String,String>();	
         toSend.put("alarms", messageToSend);
-        template.convertAndSend("/esp21_topic/alarms",toSend);
+        template.convertAndSend("/esp21_topic/alarm",toSend);
 
     }
 }

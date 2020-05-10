@@ -86,11 +86,11 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
              
             function showAlarms(messageOutput){
                 var div_a = document.getElementById("alarms_notify");
-                div_a.innerHTML('<div class="alert alert-info" id="alarm-message"> </div>');
-                var alarm = document.getElementById("alarm_message");
-                alarm.innerText = messageOutput["alarm"];
+                div_a.innerHTML += '<div class="alert alert-info" id="alarm-message"> </div>';
+                var alarm = document.getElementById("alarm-message");
+                alarm.innerText = messageOutput["alarms"];
 
-                setTimeout(function(){ div_a.innerHTML= "";}, 5000);
+                setTimeout(function(){ div_a.innerHTML= "";}, 2000);
                 
 
 

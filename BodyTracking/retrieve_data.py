@@ -13,12 +13,13 @@ def main():
     print("What is you username? ")
     username = input()
     #connect to kafka server and transforms data into json
-    producer = KafkaProducer(bootstrap_servers=['192.168.160.103:9092'],value_serializer=lambda x: json.dumps(x).encode('utf-8'))
-    #producer = KafkaProducer(bootstrap_servers=['localhost:9092'],value_serializer=lambda x: json.dumps(x).encode('utf-8'))
+    #producer = KafkaProducer(bootstrap_servers=['192.168.160.103:9092'],value_serializer=lambda x: json.dumps(x).encode('utf-8'))
+    producer = KafkaProducer(bootstrap_servers=['localhost:9092'],value_serializer=lambda x: json.dumps(x).encode('utf-8'))
 
     #for each file reads all lines
     for f in files:
         with open(f, "r") as fin:
+            time.sleep(2)
             #send first line to producer
 
             line = fin.readline()
@@ -34,7 +35,7 @@ def main():
 
                 data = {"username":username, "date_reading": date_reading, "joints": line}
                 producer.send('esp21_joints', value=data)
-                time.sleep(1)
+                time.sleep(0.5)
                 #while there is a line, reads line and send it to producer topic joints, must wait 0.1 seconds between each reading to simulate body movement
                 while line:
                     line = fin.readline()
@@ -49,7 +50,7 @@ def main():
                         data = {"username":username, "date_reading": date_reading, "joints": line}
 
                         producer.send('esp21_joints', value=data)
-                        time.sleep(0.1)
+                        time.sleep(0.5)
 
 
 
