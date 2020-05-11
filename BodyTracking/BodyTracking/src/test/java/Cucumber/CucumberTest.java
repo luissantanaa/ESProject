@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
  * @author santananas
  */
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/main/resources", glue={"StepDefinitions"})
+@CucumberOptions(features = "src/test/resources/features", glue={"Tests"})
 public class CucumberTest {
    
 }

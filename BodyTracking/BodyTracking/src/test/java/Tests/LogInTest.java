@@ -9,6 +9,7 @@ package Tests;
  *
  * @author santananas
  */
+import cucumber.api.CucumberOptions;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import cucumber.api.java.en.And;
