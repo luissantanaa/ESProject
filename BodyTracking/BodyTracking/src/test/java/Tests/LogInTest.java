@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package StepDefinitions;
+package Tests;
 
 /**
  *
@@ -21,7 +21,7 @@ import cucumber.api.java.en.When;
  * @author santananas
  */
 @SpringBootTest
-public class Steps {
+public class LogInTest {
 	
 	@Given("^Open the app$")
 	public void open_the_app() throws Throwable {
