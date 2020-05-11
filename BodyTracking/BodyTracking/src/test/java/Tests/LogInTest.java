@@ -16,33 +16,43 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import org.openqa.selenium.By;		
+import org.openqa.selenium.WebDriver;		
+import org.openqa.selenium.chrome.ChromeDriver;	
+
 /**
  *
  * @author santananas
  */
 @SpringBootTest
 public class LogInTest {
-	
-	@Given("^Open the app$")
-	public void open_the_app() throws Throwable {
-		System.out.println("Given");
-	}
+    
+    WebDriver driver;			
+    		
+    @Given("^Given Open the app")					
+    public void open_the_app() throws Throwable							
+    {		
+       driver= new ChromeDriver();					
+       driver.manage().window().maximize();			
+       driver.get("http://localhost:21999/");					
+    }		
 
-	@When("^the client calls /login$")
-	public void the_client_calls_login() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("When");
-	}
+    @When("The client calls login")			
+    public void calls_login() throws Throwable 							
+    {		
+       driver.findElement(By.id("login")).click();
+    }
+    
+    @When("^Enter the Username \"(.*)\" and Password \"(.*)\"$")			
+    public void enter_the_Username_and_Password(String username,String password) throws Throwable 							
+    {		
+       driver.findElement(By.id("username")).sendKeys(username);					
+       driver.findElement(By.id("password")).sendKeys(password);					
+    }		
 
-	@When("^the username and password are correct$")
-	public void the_username_and_password_are_correct() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("When");
-	}
-
-	@Then("^the client can access his information$")
-	public void the_client_can_access_his_information() throws Throwable {
-	    // Write code here that turns the phrase above into concrete actions
-		System.out.println("Then");
-	}
+    @Then("^Reset the credential$")					
+    public void	Reset_the_credential() throws Throwable 							
+    {		
+       driver.findElement(By.name("btnReset")).click();					
+    }
 }
