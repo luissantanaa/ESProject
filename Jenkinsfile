@@ -74,7 +74,7 @@ pipeline {
             agent any
             steps{
                 
-                sh 'cleanWs()'
+                cleanWs()
 
             }
 
