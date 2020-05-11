@@ -1,14 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Tests;
 
-/**
- *
- * @author santananas
- */
 import org.springframework.boot.test.context.SpringBootTest;
 
 import cucumber.api.java.en.And;
@@ -16,15 +7,22 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
+import org.openqa.selenium.By;		
+import org.openqa.selenium.WebDriver;	
+import org.openqa.selenium.chrome.ChromeDriver;
+
 /**
  *
- * @author santananas
+ * @author joao
  */
 @SpringBootTest
 public class RecordExercise {
-
+    
+    private WebDriver driver;
+    
     @Given("^the user wants to record his exercise session for further analysis$")
     public void record_the_exercise_session() throws Throwable {
+        
         System.out.println("Given");
     }
 
