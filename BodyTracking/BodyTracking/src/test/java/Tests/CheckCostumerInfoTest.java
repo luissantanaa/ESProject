@@ -16,7 +16,7 @@ import cucumber.api.java.en.When;
  *
  * @author guilherme
  */
-@SpringBootTest
+//@SpringBootTest
 public class CheckCostumerInfoTest {
 
     

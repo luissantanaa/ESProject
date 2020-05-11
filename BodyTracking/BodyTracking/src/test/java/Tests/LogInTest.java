@@ -30,7 +30,7 @@ public class LogInTest {
     
     WebDriver driver;			
     		
-    @Given("^Given Open the app")					
+    @Given("^Open the app$")					
     public void open_the_app() throws Throwable							
     {		
        driver= new ChromeDriver();					
@@ -38,13 +38,13 @@ public class LogInTest {
        driver.get("http://localhost:21999/");					
     }		
 
-    @When("The client calls login")			
+    @When("^The client calls login$")			
     public void calls_login() throws Throwable 							
     {		
        driver.findElement(By.id("login")).click();
     }
     
-    @When("^Enter the Username \"(.*)\" and Password \"(.*)\"$")			
+    @And("^the username and password are correct$")			
     public void enter_the_Username_and_Password(String username,String password) throws Throwable 							
     {		
        driver.findElement(By.id("username")).sendKeys(username);					

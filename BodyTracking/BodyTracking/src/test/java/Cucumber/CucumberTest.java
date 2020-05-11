@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Cucumber;
+
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
@@ -13,7 +14,10 @@ import org.junit.runner.RunWith;
  * @author santananas
  */
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/features", glue={"Tests"})
+@CucumberOptions(
+    features = "src/test/resources/features",
+    glue = {"Tests"}
+)
 public class CucumberTest {
-   
+
 }
