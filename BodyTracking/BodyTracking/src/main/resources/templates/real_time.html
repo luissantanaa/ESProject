@@ -86,11 +86,12 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
              
             function showAlarms(messageOutput){
                 var div_a = document.getElementById("alarms_notify");
-                div_a.innerHTML += '<div class="alert alert-info" id="alarm-message"> </div>';
+                
+                div_a.innerHTML = '<div class="alert alert-info" id="alarm-message"> </div>';
                 var alarm = document.getElementById("alarm-message");
                 alarm.innerText = messageOutput["alarms"];
 
-                setTimeout(function(){ div_a.innerHTML= "";}, 2000);
+                setTimeout(function(){ div_a.innerHTML= "";}, 3000);
                 
 
 
@@ -106,7 +107,6 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                 cv_ctx.fillStyle = "#0FF000";
                 var jPos = messageOutput["JointPos"];
                 
-                console.log(jPos);
                 jPos = jPos.split(",");
                 var Jpos_tmp;
                 
@@ -114,7 +114,6 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
                 for(var i =0;i< jPos.length;i++){
                     Jpos_tmp = jPos[i].split(";");
                     cv_ctx.beginPath();
-                    console.log(Jpos_tmp);
                     cv_ctx.arc(parseFloat(Jpos_tmp[0]), parseFloat(Jpos_tmp[1]), 5, 0, 2 * Math.PI);
                     cv_ctx.closePath();
                     cv_ctx.fill();   

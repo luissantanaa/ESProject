@@ -11,12 +11,15 @@ pipeline {
             }
             steps {
                 //clean maven project and create war file
-                sh "rm -r BodyTracking/BodyTracking/target/*"
+                sh "rm -r BodyTracking/BodyTracking/target/* || true"
                 sh "cd BodyTracking/BodyTracking/ && mvn clean -Dmaven.test.skip package "
             }
                 
         }
         stage('Test') {
+		    when{
+                branch 'development'
+            }
             agent{
                 docker{
                     image 'maven:3-alpine'
@@ -30,6 +33,9 @@ pipeline {
         }
 
         stage('Pre-Deploy'){
+            when{
+                branch 'master'          
+            }
             agent any
             steps{
                 //send war and pom to artifact
@@ -40,6 +46,9 @@ pipeline {
         }
         
         stage('Clean Registry'){
+            when{
+                branch 'master'          
+            }
             agent any
             steps{
                 sh 'docker image rm 192.168.160.103:5000/p21/esp21bodytrackingbuild:latest || echo "Registry cleaned"'
@@ -48,6 +57,10 @@ pipeline {
         
         
         stage('Deploy') {
+            when{
+                branch 'master'          
+            }
+            
             agent any
             steps {
                 //Using docker registry to save docker image

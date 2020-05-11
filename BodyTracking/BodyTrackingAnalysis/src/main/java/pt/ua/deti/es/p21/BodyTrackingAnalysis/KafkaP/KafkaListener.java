@@ -43,15 +43,15 @@ public class KafkaListener {
         if (joints_divided.length > 25){
             int numPeople = (int) Math.ceil(joints_divided.length/25);
             producer.sendMessage(" 0 : " + numPeople);
-        }else if(Float.parseFloat(joints_divided[20].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) && Float.parseFloat(joints_divided[23].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) ){
+        }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) && Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) ){
             producer.sendMessage("1");
-        }else if (Float.parseFloat(joints_divided[20].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
+        }else if (Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("2");
             System.out.print("ARM UP");
-        }else if (Float.parseFloat(joints_divided[23].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
+        }else if (Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("3");
             System.out.print("ARM UP");
-        }else if(Float.parseFloat(joints_divided[20].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) &&Float.parseFloat(joints_divided[23].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
+        }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) &&Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("4");
         }
 
