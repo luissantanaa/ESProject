@@ -77,10 +77,9 @@ public class BodyTrackingController {
         if(user_tmp.getPassword().equals(user.getPassword())){
             loggedIn.put(user.getUsername(), true);
             m.addAttribute("username", user.getUsername());
-            logger.debug("User " + user.getUsername() + " LOGIN successful");
-            System.out.println("AQUI");
+            logger.debug("LOGIN");
         }else{
-            logger.debug("User " + user.getUsername() + " LOGIN failed");
+            logger.debug("LOGIN FAILED " + user.getUsername()  );
         }
 
         
@@ -104,7 +103,7 @@ public class BodyTrackingController {
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String sign(@ModelAttribute User user){
         usersRep.save(user);
-        logger.info("User " + user.getUsername() + " registed");
+        logger.debug("SIGN UP");
         return "redirect:login";
     }
     

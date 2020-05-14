@@ -105,7 +105,7 @@ public class KafkaConsumer {
     
     
     @KafkaListener(topics = "esp21_alarms", groupId = "esp21_1") //topico e groupID
-    public void consumeLogs(String message) throws IOException{
+    public void consumeAlarms(String message) throws IOException{
         
         System.out.println("ALARMS " +  message);
         String  messageToSend;
@@ -128,5 +128,12 @@ public class KafkaConsumer {
         toSend.put("alarms", messageToSend);
         template.convertAndSend("/esp21_topic/alarm",toSend);
 
+    }
+    
+    @KafkaListener(topics = "esp21_logs", groupId = "esp21_1") //topico e groupID
+    public void consumeLogs(String message) throws IOException{
+        
+        System.out.println("LOGS " +  message);
+        
     }
 }

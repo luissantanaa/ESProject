@@ -12,6 +12,8 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.lang.*;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 /**
  *
  * @author alexandre
@@ -20,6 +22,9 @@ import java.lang.*;
 @Service
 public class KafkaListener {
     
+    
+    Logger logger = LogManager.getLogger(KafkaListener.class);
+
     @Autowired 
     KafkaProducer producer;
     
@@ -45,14 +50,19 @@ public class KafkaListener {
             producer.sendMessage(" 0 : " + numPeople);
         }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) && Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) ){
             producer.sendMessage("1");
+            logger.debug("BOTH ARMS UP");
         }else if (Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("2");
             System.out.print("ARM UP");
+            logger.debug("LEFT ARM UP");
         }else if (Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("3");
+            
+            logger.debug("RIGHT ARM UP");
             System.out.print("ARM UP");
         }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) &&Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("4");
+            logger.debug("HANDSTAND");
         }
 
     }
