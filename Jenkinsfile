@@ -56,7 +56,7 @@ pipeline {
         }
         
         
-        stage('Deploy') {
+        stage('DeployAS') {
             when{
                 branch 'master'          
             }
@@ -66,16 +66,42 @@ pipeline {
                 //Using docker registry to save docker image
                 
                 sh  '''
-                        docker build -t esp21bodytracking_build:latest  .
+                        docker build -f BodyTracking/BodyTrackingAnalysis/Dockerfile -t esp21bodytracking_as_build:latest  .
+                        docker tag  esp21bodytracking_as_build:latest 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
+                        docker push 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest                        
+                        
+                    '''
+                sshagent (credentials: ['RuntimeVMCredP21']) {
+                    sh '''
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21bodytrackingcontainer_as|| echo "container down"
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker pull 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21999 -d --name esp21bodytrackingcontainer_as esp21bodytracking_as_build:latest 
+                    '''
+                }
+            
+            }
+        }
+
+        stage('DeployBT') {
+            when{
+                branch 'master'          
+            }
+            
+            agent any
+            steps {
+                //Using docker registry to save docker image
+                
+                sh  '''
+                        docker build -f BodyTracking/BodyTracking/Dockerfile -t esp21bodytracking_build:latest  .
                         docker tag  esp21bodytracking_build:latest 192.168.160.99:5000/p21/esp21bodytracking_build:latest
                         docker push 192.168.160.99:5000/p21/esp21bodytracking_build:latest                        
                         
                     '''
                 sshagent (credentials: ['RuntimeVMCredP21']) {
                     sh '''
-                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21bodytrackingcontainer_r|| echo "container down"
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21bodytrackingcontainer_bt|| echo "container down"
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker pull 192.168.160.99:5000/p21/esp21bodytracking_build:latest
-                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21999 -d --name esp21bodytrackingcontainer_r esp21bodytracking_build:latest 
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21999 -d --name esp21bodytrackingcontainer_bt esp21bodytracking_build:latest 
                     '''
                 }
             
