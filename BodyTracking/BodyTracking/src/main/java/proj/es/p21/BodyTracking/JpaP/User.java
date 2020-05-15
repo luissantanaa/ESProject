@@ -21,7 +21,11 @@ import org.bouncycastle.util.encoders.Hex;
 @Entity
 public class User implements Serializable{
     
-    @Id 
+    
+    
+    private String id;
+    
+    @Id
     private String username;
     
     private String password;
@@ -52,6 +56,15 @@ public class User implements Serializable{
         return this.password;
     }
 
+    public int getId() {
+        return Integer.parseInt(id);
+    }
+
+    public void setId(int id) {
+        this.id = String.valueOf(id);
+    }
+
+    
     
     @Override
     public String toString() {

@@ -14,6 +14,7 @@ import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,7 +48,7 @@ public class BodyTrackingController {
     @Autowired
     JointCollectionRepository jointsRep;
     
-    
+    private JSONObject elk_OBJ;
 
     
     @RequestMapping(value = "/home", method = RequestMethod.GET)
@@ -74,9 +75,12 @@ public class BodyTrackingController {
         Optional<User> optional_user = usersRep.findById(user.getUsername());
         User user_tmp = optional_user.get();
         System.out.print(user_tmp.toString());
+        
+        elk_OBJ = new JSONObject();
         if(user_tmp.getPassword().equals(user.getPassword())){
             loggedIn.put(user.getUsername(), true);
             m.addAttribute("username", user.getUsername());
+            
             logger.debug("LOGIN");
         }else{
             logger.debug("LOGIN FAILED " + user.getUsername()  );
@@ -91,18 +95,21 @@ public class BodyTrackingController {
     public String get_sign(Model m){
         m.addAttribute("user", new User());
         
-        List<User> list_u = usersRep.findAll();
         
-        for(User u : list_u){
-            System.out.print(u.toString());
-        }
         return "register";
     }
     
     
     @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public String sign(@ModelAttribute User user){
+        List<User> list_u = usersRep.findAll();
+        System.out.println(list_u.size());
+        user.setId(list_u.size());
+        
         usersRep.save(user);
+        
+        
+        elk_OBJ = new JSONObject();
         logger.debug("SIGN UP");
         return "redirect:login";
     }

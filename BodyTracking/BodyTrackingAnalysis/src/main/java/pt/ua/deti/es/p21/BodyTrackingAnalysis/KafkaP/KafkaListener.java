@@ -12,8 +12,16 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.lang.*;
+import java.util.Collections;
+import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import pt.ua.deti.es.p21.BodyTrackingAnalysis.JpaP.UserReading;
+import pt.ua.deti.es.p21.BodyTrackingAnalysis.JpaP.UsersReadingsRepository;
+//import pt.ua.deti.es.p21.BodyTrackingAnalysis.JpaP.UserReading;
+//import pt.ua.deti.es.p21.BodyTrackingAnalysis.JpaP.UsersReadingsRepository;
+
+
 /**
  *
  * @author alexandre
@@ -23,14 +31,27 @@ import org.apache.logging.log4j.Logger;
 public class KafkaListener {
     
     
-    Logger logger = LogManager.getLogger(KafkaListener.class);
+    private static final Logger logger = LogManager.getLogger(KafkaListener.class);
 
+    
+    
     @Autowired 
     KafkaProducer producer;
+    
+    
+    @Autowired
+    UsersReadingsRepository usersReadingRep;
+    
     
     @org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_2") //topico e groupID
     public void consumeJointReadings(JSONObject jsonO) throws IOException{
         
+        
+        List<UserReading> list_users_reads = usersReadingRep.findAll();
+        
+        
+        JSONObject elk_OBJ;
+
         
         byte[] array = new byte[30]; // length is bounded by 30
         new Random().nextBytes(array);
@@ -45,6 +66,16 @@ public class KafkaListener {
         String listJoints =  (String) jsonO.get("joints");
         joints_divided = listJoints.split(",");
         
+        
+        if (!usersReadingRep.existsById(username)){
+            
+            UserReading userRead = new UserReading();
+            userRead.setUsername_reading(username);
+            userRead.setId_username_reading(list_users_reads.size());
+            usersReadingRep.save(userRead);
+        }
+        
+        elk_OBJ = new JSONObject();
         if (joints_divided.length > 25){
             int numPeople = (int) Math.ceil(joints_divided.length/25);
             producer.sendMessage(" 0 : " + numPeople);

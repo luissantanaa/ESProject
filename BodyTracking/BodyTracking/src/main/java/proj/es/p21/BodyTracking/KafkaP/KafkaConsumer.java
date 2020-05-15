@@ -41,7 +41,9 @@ public class KafkaConsumer {
     //automatically send to database
     @Autowired
     JointCollectionRepository jointsRep;
-		
+    
+    
+    
     @Autowired
     SimpMessagingTemplate template;    
 
@@ -60,6 +62,8 @@ public class KafkaConsumer {
         System.out.println(jsonO.toString());
         
         String username = (String) jsonO.get("username");
+        
+        
         String date_reading = (String) jsonO.get("date_reading");
         
         String listJoints =  (String) jsonO.get("joints");

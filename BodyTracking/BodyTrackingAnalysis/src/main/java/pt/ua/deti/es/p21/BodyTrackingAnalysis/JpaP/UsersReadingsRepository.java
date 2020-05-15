@@ -3,15 +3,16 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proj.es.p21.BodyTracking.JpaP;
-
+package pt.ua.deti.es.p21.BodyTrackingAnalysis.JpaP;
 import org.springframework.data.jpa.repository.JpaRepository;
-import proj.es.p21.BodyTracking.JpaP.User;
+
 
 /**
  *
  * @author alexandre
  */
-public interface UsersRepository extends JpaRepository<User, String> {
+
+public interface UsersReadingsRepository extends JpaRepository<UserReading, String> {
     
 }
+
