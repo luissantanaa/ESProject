@@ -16,6 +16,7 @@ import java.util.Collections;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.json.JSONException;
 import pt.ua.deti.es.p21.BodyTrackingAnalysis.JpaP.UserReading;
 import pt.ua.deti.es.p21.BodyTrackingAnalysis.JpaP.UsersReadingsRepository;
 //import pt.ua.deti.es.p21.BodyTrackingAnalysis.JpaP.UserReading;
@@ -44,7 +45,7 @@ public class KafkaListener {
     
     
     @org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_2") //topico e groupID
-    public void consumeJointReadings(JSONObject jsonO) throws IOException{
+    public void consumeJointReadings(JSONObject jsonO) throws IOException, JSONException{
         
         
         List<UserReading> list_users_reads = usersReadingRep.findAll();
@@ -75,6 +76,8 @@ public class KafkaListener {
             usersReadingRep.save(userRead);
         }
         
+        
+        int message=0;
         elk_OBJ = new JSONObject();
         if (joints_divided.length > 25){
             int numPeople = (int) Math.ceil(joints_divided.length/25);
@@ -88,19 +91,20 @@ public class KafkaListener {
             logger.debug("LEFT ARM UP");
         }else if (Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("3");
-            
             logger.debug("RIGHT ARM UP");
             System.out.print("ARM UP");
         }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) &&Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("4");
             logger.debug("HANDSTAND");
         }
-
+        
+        
     }
-    
+    /*
     @org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_2") //topico e groupID
     public JSONObject consumeJointReadingsJson(JSONObject jsonO) throws IOException{
         return jsonO;
     }
+    */
     
 }

@@ -32,10 +32,12 @@ public class KafkaTopicConfig {
     public NewTopic topic2() {
          return new NewTopic("esp21_joints", 1, (short) 1);
     }
-    
+    /*
     @Bean
     public NewTopic topic3() {
          return new NewTopic("esp21_logs", 1, (short) 1);
     }
+
+    */
     
 }
