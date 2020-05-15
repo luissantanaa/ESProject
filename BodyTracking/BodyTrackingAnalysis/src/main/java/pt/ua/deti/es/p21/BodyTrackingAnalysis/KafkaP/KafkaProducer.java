@@ -22,7 +22,7 @@ public class KafkaProducer {
  
     
     private static final String TOPIC = "esp21_alarms";
- 
+
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
     

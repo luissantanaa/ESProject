@@ -67,5 +67,9 @@ public class KafkaListener {
 
     }
     
+    @org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_2") //topico e groupID
+    public JSONObject consumeJointReadingsJson(JSONObject jsonO) throws IOException{
+        return jsonO;
+    }
     
 }
