@@ -16,7 +16,23 @@ pipeline {
             }
                 
         }
-        stage('Test') {
+        stage('Test Analysis System') {
+		    when{
+                branch 'development'
+            }
+            agent{
+                docker{
+                    image 'maven:3-alpine'
+                    args '-v $HOME/.m2:/root/.m2'
+                }
+            }
+            steps {
+                echo 'Testing phase for Analysis is about to start'
+                sh 'cd BodyTracking/BodyTrackingAnalysis/ && mvn verify'
+            }
+        }
+
+        stage('Test BT') {
 		    when{
                 branch 'development'
             }
@@ -38,9 +54,14 @@ pipeline {
             }
             agent any
             steps{
-                //send war and pom to artifact
-                sh "mvn -f BodyTracking/BodyTracking/pom.xml -s BodyTracking/settings.xml deploy"
-		        echo "deploying..."
+                echo "deploying Body Tracking..."
+                sh "cd BodyTracking/BodyTracking/ && mvn -f pom.xml -s ../settings.xml deploy"
+
+                echo "deploying Body Tracking Analysis System..."
+
+                sh "cd BodyTracking/BodyTracking/Analysis && mvn -f pom.xml -s ../settings.xml deploy"
+		        
+                echo "deploying..."
             }
 
         }
@@ -51,7 +72,9 @@ pipeline {
             }
             agent any
             steps{
-                sh 'docker image rm 192.168.160.103:5000/p21/esp21bodytrackingbuild:latest || echo "Registry cleaned"'
+                sh 'docker image rm 192.168.160.103:5000/p21/esp21bodytracking_build:latest || echo "Registry cleaned"'
+
+                sh 'docker image rm 192.168.160.103:5000/p21/esp21bodytracking_as_build:latest || echo "Registry cleaned"'
             }
         }
         
