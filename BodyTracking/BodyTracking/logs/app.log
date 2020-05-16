@@ -1,2 +1,1224 @@
 2020-05-16 00:28:12,473 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
 2020-05-16 00:34:51,441 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:42:08,630 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:42:08,638 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:42:08,638 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:42:08,842 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:42:09,023 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:42:09,024 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:42:09,024 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:42:57,139 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:42:57,153 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:42:57,153 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:42:57,348 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:42:57,547 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:42:57,547 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:42:57,548 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:43:59,859 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:43:59,867 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:43:59,868 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:44:00,078 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:44:00,241 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:44:00,242 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:44:00,242 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:44:32,068 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:44:32,080 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:44:32,082 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:44:32,282 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:44:32,361 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:44:32,362 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:44:32,362 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:44:59,372 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:44:59,380 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:44:59,380 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:44:59,514 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [Tests.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:44:59,515 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [Tests.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:44:59,515 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [Tests.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:44:59,577 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:46:38,508 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [pt.es.p21.BodyTracking.KafkaTestP.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:46:38,517 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [pt.es.p21.BodyTracking.KafkaTestP.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:46:38,518 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [pt.es.p21.BodyTracking.KafkaTestP.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:46:38,640 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [pt.es.p21.BodyTracking.KafkaTestP.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:46:38,641 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [pt.es.p21.BodyTracking.KafkaTestP.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:46:38,641 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [pt.es.p21.BodyTracking.KafkaTestP.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:46:38,703 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:47:14,911 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:47:14,921 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:47:14,921 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:47:15,045 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration proj.es.p21.BodyTracking.BodyTrackingApplication for test class proj.es.p21.BodyTracking.KafkaTestP.KafkaTest
+2020-05-16 12:47:15,124 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:47:15,158 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-05-16 12:47:15,172 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3da30852, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@403f0a22, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@503ecb24, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4c51cf28, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6995bf68, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5143c662, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@77825085, org.springframework.test.context.event.EventPublishingTestExecutionListener@3568f9d2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@71c27ee8, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3e7dd664, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@5b1ebf56, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@294a6b8e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4b1d6571]
+2020-05-16 12:47:15,194 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:47:15,195 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:47:15,195 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:47:15,196 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration proj.es.p21.BodyTracking.BodyTrackingApplication for test class proj.es.p21.BodyTracking.KafkaTestP.KafkaTest
+2020-05-16 12:47:15,198 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-05-16 12:47:15,198 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4758820d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@74eb909f, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@28ec166e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2eee3069, org.springframework.test.context.support.DirtiesContextTestExecutionListener@2da59753, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5629510, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@4df5bcb4, org.springframework.test.context.event.EventPublishingTestExecutionListener@12c7a01b, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@13d9b21f, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2826f61, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@62727399, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@4d9ac0b4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@130dca52]
+2020-05-16 12:47:15,441 INFO o.a.k.c.p.ProducerConfig [main] ProducerConfig values: 
+	acks = 1
+	batch.size = 0
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2020-05-16 12:47:15,455 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:47:15,455 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:47:15,456 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629635453
+2020-05-16 12:47:15,553 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-2] [Producer clientId=producer-2] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:47:15,579 WARN o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [main] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/home/alexandre/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/home/alexandre/.m2/repository/org/json/json/20190722/json-20190722.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-16 12:47:15,596 INFO p.e.p.B.K.KafkaTest [main] Starting KafkaTest on avs-pc with PID 7450 (started by alexandre in /home/alexandre/Desktop/ES_Proj/ESProject/BodyTracking/BodyTracking)
+2020-05-16 12:47:15,600 INFO p.e.p.B.K.KafkaTest [main] No active profile set, falling back to default profiles: default
+2020-05-16 12:47:16,397 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-16 12:47:16,575 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 167ms. Found 3 JPA repository interfaces.
+2020-05-16 12:47:17,531 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-16 12:47:17,615 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-16 12:47:17,732 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-16 12:47:17,872 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-16 12:47:18,290 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-16 12:47:18,324 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-05-16 12:47:19,235 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-16 12:47:19,243 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-16 12:47:19,811 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-05-16 12:47:19,827 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-05-16 12:47:20,005 INFO o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-05-16 12:47:20,137 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'brokerChannelExecutor'
+2020-05-16 12:47:20,187 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-16 12:47:20,925 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page: class path resource [static/index.html]
+2020-05-16 12:47:22,705 INFO o.a.k.c.a.AdminClientConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-05-16 12:47:22,739 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:47:22,739 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:47:22,740 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629642739
+2020-05-16 12:47:22,910 INFO o.a.k.c.a.AdminClientConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-05-16 12:47:22,917 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:47:22,917 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:47:22,917 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629642917
+2020-05-16 12:47:22,983 INFO o.a.k.c.c.ConsumerConfig [main] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = esp21_1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-05-16 12:47:23,054 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:47:23,054 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:47:23,055 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629643054
+2020-05-16 12:47:23,057 INFO o.a.k.c.c.KafkaConsumer [main] [Consumer clientId=consumer-1, groupId=esp21_1] Subscribed to topic(s): esp21_logs
+2020-05-16 12:47:23,059 INFO o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2020-05-16 12:47:23,063 INFO o.a.k.c.a.AdminClientConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-05-16 12:47:23,070 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:47:23,070 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:47:23,071 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629643070
+2020-05-16 12:47:23,101 INFO o.a.k.c.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:47:23,113 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:47:23,119 INFO o.a.k.c.c.ConsumerConfig [main] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = esp21_1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-05-16 12:47:23,124 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Revoking previously assigned partitions []
+2020-05-16 12:47:23,125 INFO o.s.k.l.KafkaMessageListenerContainer [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] esp21_1: partitions revoked: []
+2020-05-16 12:47:23,126 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:47:23,128 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:47:23,129 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:47:23,129 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629643128
+2020-05-16 12:47:23,129 INFO o.a.k.c.c.KafkaConsumer [main] [Consumer clientId=consumer-2, groupId=esp21_1] Subscribed to topic(s): esp21_alarms
+2020-05-16 12:47:23,129 INFO o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2020-05-16 12:47:23,137 INFO o.a.k.c.a.AdminClientConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-05-16 12:47:23,141 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:47:23,141 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:47:23,142 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629643141
+2020-05-16 12:47:23,153 INFO o.a.k.c.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:47:23,163 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:47:23,172 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Revoking previously assigned partitions []
+2020-05-16 12:47:23,173 INFO o.s.k.l.KafkaMessageListenerContainer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] esp21_1: partitions revoked: []
+2020-05-16 12:47:23,173 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:47:23,184 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:47:23,187 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:47:23,205 INFO o.a.k.c.c.ConsumerConfig [main] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = esp21_1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-05-16 12:47:23,211 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:47:23,212 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:47:23,212 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629643211
+2020-05-16 12:47:23,212 INFO o.a.k.c.c.KafkaConsumer [main] [Consumer clientId=consumer-3, groupId=esp21_1] Subscribed to topic(s): esp21_joints
+2020-05-16 12:47:23,213 INFO o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2020-05-16 12:47:23,214 INFO o.s.m.s.b.SimpleBrokerMessageHandler [main] Starting...
+2020-05-16 12:47:23,214 INFO o.s.m.s.b.SimpleBrokerMessageHandler [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-05-16 12:47:23,215 INFO o.s.m.s.b.SimpleBrokerMessageHandler [main] Started.
+2020-05-16 12:47:23,253 INFO p.e.p.B.K.KafkaTest [main] Started KafkaTest in 7.967 seconds (JVM running for 9.276)
+2020-05-16 12:47:23,273 INFO o.a.k.c.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:47:23,280 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:47:23,283 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Revoking previously assigned partitions []
+2020-05-16 12:47:23,284 INFO o.s.k.l.KafkaMessageListenerContainer [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] esp21_1: partitions revoked: []
+2020-05-16 12:47:23,284 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:47:23,473 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Successfully joined group with generation 35
+2020-05-16 12:47:23,473 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Successfully joined group with generation 35
+2020-05-16 12:47:23,488 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:47:23,494 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Setting newly assigned partitions: esp21_alarms-0
+2020-05-16 12:47:23,495 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Setting newly assigned partitions: esp21_logs-0
+2020-05-16 12:47:23,548 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Setting offset for partition esp21_alarms-0 to the committed offset FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=127.0.0.1:9092 (id: 1001 rack: null), epoch=0}}
+2020-05-16 12:47:23,549 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Setting offset for partition esp21_logs-0 to the committed offset FetchPosition{offset=5, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=127.0.0.1:9092 (id: 1001 rack: null), epoch=0}}
+2020-05-16 12:47:23,593 INFO o.s.k.l.KafkaMessageListenerContainer [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] esp21_1: partitions assigned: [esp21_logs-0]
+2020-05-16 12:47:23,594 INFO o.s.k.l.KafkaMessageListenerContainer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] esp21_1: partitions assigned: [esp21_alarms-0]
+2020-05-16 12:47:23,841 INFO o.s.m.s.b.SimpleBrokerMessageHandler [SpringContextShutdownHook] Stopping...
+2020-05-16 12:47:23,841 INFO o.s.m.s.b.SimpleBrokerMessageHandler [SpringContextShutdownHook] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-05-16 12:47:23,841 INFO o.s.m.s.b.SimpleBrokerMessageHandler [SpringContextShutdownHook] Stopped.
+2020-05-16 12:47:23,847 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Member consumer-1-90552527-e0ff-4632-96f9-c258560ad5b7 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:47:23,853 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Member consumer-3-54e9af14-5a1e-43cf-bded-2a04408518a4 sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:47:23,854 INFO o.a.k.c.c.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Unsubscribed all topics or patterns and assigned partitions
+2020-05-16 12:47:23,854 INFO o.a.k.c.c.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Unsubscribed all topics or patterns and assigned partitions
+2020-05-16 12:47:23,854 INFO o.s.s.c.ThreadPoolTaskScheduler [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] Shutting down ExecutorService
+2020-05-16 12:47:23,854 INFO o.s.s.c.ThreadPoolTaskScheduler [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] Shutting down ExecutorService
+2020-05-16 12:47:23,860 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Member consumer-2-3a179572-60a6-4caf-a191-6f1ce4bdaa9e sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:47:23,862 INFO o.a.k.c.c.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Unsubscribed all topics or patterns and assigned partitions
+2020-05-16 12:47:23,862 INFO o.s.s.c.ThreadPoolTaskScheduler [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] Shutting down ExecutorService
+2020-05-16 12:47:23,877 INFO o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] esp21_1: Consumer stopped
+2020-05-16 12:47:23,882 INFO o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] esp21_1: Consumer stopped
+2020-05-16 12:47:23,890 INFO o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] esp21_1: Consumer stopped
+2020-05-16 12:47:23,895 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'brokerChannelExecutor'
+2020-05-16 12:47:23,896 INFO o.s.s.c.ThreadPoolTaskScheduler [SpringContextShutdownHook] Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-05-16 12:47:23,897 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-05-16 12:47:23,898 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-05-16 12:47:23,900 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-16 12:47:23,904 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-16 12:47:23,961 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2020-05-16 12:48:27,873 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:48:27,880 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:48:27,880 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:48:27,992 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration proj.es.p21.BodyTracking.BodyTrackingApplication for test class proj.es.p21.BodyTracking.KafkaTestP.KafkaTest
+2020-05-16 12:48:28,065 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-1] [Producer clientId=producer-1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:48:28,097 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-05-16 12:48:28,108 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@4c51cf28, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@6995bf68, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5143c662, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@77825085, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3568f9d2, org.springframework.test.context.transaction.TransactionalTestExecutionListener@71c27ee8, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@3e7dd664, org.springframework.test.context.event.EventPublishingTestExecutionListener@5b1ebf56, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@294a6b8e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@4b1d6571, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1b835480, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@3549bca9, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4f25b795]
+2020-05-16 12:48:28,130 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Neither @ContextConfiguration nor @ContextHierarchy found for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest], using SpringBootContextLoader
+2020-05-16 12:48:28,131 INFO o.s.t.c.s.AbstractContextLoader [main] Could not detect default resource locations for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2020-05-16 12:48:28,131 INFO o.s.t.c.s.AnnotationConfigContextLoaderUtils [main] Could not detect default configuration classes for test class [proj.es.p21.BodyTracking.KafkaTestP.KafkaTest]: KafkaTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2020-05-16 12:48:28,133 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Found @SpringBootConfiguration proj.es.p21.BodyTracking.BodyTrackingApplication for test class proj.es.p21.BodyTracking.KafkaTestP.KafkaTest
+2020-05-16 12:48:28,134 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+2020-05-16 12:48:28,134 INFO o.s.b.t.c.SpringBootTestContextBootstrapper [main] Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@2eee3069, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@2da59753, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5629510, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@4df5bcb4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@12c7a01b, org.springframework.test.context.transaction.TransactionalTestExecutionListener@13d9b21f, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@2826f61, org.springframework.test.context.event.EventPublishingTestExecutionListener@62727399, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4d9ac0b4, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@130dca52, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@2654635, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@737a135b, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@687ef2e0]
+2020-05-16 12:48:28,414 INFO o.a.k.c.p.ProducerConfig [main] ProducerConfig values: 
+	acks = 1
+	batch.size = 0
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = default
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = false
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.ByteArraySerializer
+
+2020-05-16 12:48:28,437 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:48:28,438 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:48:28,438 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629708436
+2020-05-16 12:48:28,525 WARN o.s.b.t.j.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer [main] 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/home/alexandre/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/home/alexandre/.m2/repository/org/json/json/20190722/json-20190722.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2020-05-16 12:48:28,530 INFO o.a.k.c.Metadata [kafka-producer-network-thread | producer-2] [Producer clientId=producer-2] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:48:28,541 INFO p.e.p.B.K.KafkaTest [main] Starting KafkaTest on avs-pc with PID 7764 (started by alexandre in /home/alexandre/Desktop/ES_Proj/ESProject/BodyTracking/BodyTracking)
+2020-05-16 12:48:28,544 INFO p.e.p.B.K.KafkaTest [main] No active profile set, falling back to default profiles: default
+2020-05-16 12:48:29,140 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-16 12:48:29,255 INFO o.s.d.r.c.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 107ms. Found 3 JPA repository interfaces.
+2020-05-16 12:48:30,076 INFO o.h.j.i.u.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-16 12:48:30,131 INFO o.h.Version [main] HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-16 12:48:30,253 INFO o.h.a.c.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-16 12:48:30,351 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Starting...
+2020-05-16 12:48:30,668 INFO c.z.h.HikariDataSource [main] HikariPool-1 - Start completed.
+2020-05-16 12:48:30,701 INFO o.h.d.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2020-05-16 12:48:31,476 INFO o.h.e.t.j.p.i.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-16 12:48:31,484 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-16 12:48:31,985 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'clientInboundChannelExecutor'
+2020-05-16 12:48:31,998 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'clientOutboundChannelExecutor'
+2020-05-16 12:48:32,143 INFO o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService 'messageBrokerTaskScheduler'
+2020-05-16 12:48:32,214 INFO o.s.s.c.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'brokerChannelExecutor'
+2020-05-16 12:48:32,256 WARN o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-16 12:48:32,824 INFO o.s.b.a.w.s.WelcomePageHandlerMapping [main] Adding welcome page: class path resource [static/index.html]
+2020-05-16 12:48:34,101 INFO o.a.k.c.a.AdminClientConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-05-16 12:48:34,128 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:48:34,128 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:48:34,128 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629714128
+2020-05-16 12:48:34,205 INFO o.a.k.c.a.AdminClientConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-05-16 12:48:34,209 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:48:34,209 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:48:34,209 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629714209
+2020-05-16 12:48:34,249 INFO o.a.k.c.c.ConsumerConfig [main] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = esp21_1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-05-16 12:48:34,292 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:48:34,293 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:48:34,293 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629714292
+2020-05-16 12:48:34,295 INFO o.a.k.c.c.KafkaConsumer [main] [Consumer clientId=consumer-1, groupId=esp21_1] Subscribed to topic(s): esp21_logs
+2020-05-16 12:48:34,297 INFO o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2020-05-16 12:48:34,299 INFO o.a.k.c.a.AdminClientConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-05-16 12:48:34,304 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:48:34,304 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:48:34,304 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629714303
+2020-05-16 12:48:34,323 INFO o.a.k.c.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:48:34,325 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:48:34,329 INFO o.a.k.c.c.ConsumerConfig [main] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = esp21_1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-05-16 12:48:34,335 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:48:34,335 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Revoking previously assigned partitions []
+2020-05-16 12:48:34,335 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:48:34,335 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629714335
+2020-05-16 12:48:34,335 INFO o.a.k.c.c.KafkaConsumer [main] [Consumer clientId=consumer-2, groupId=esp21_1] Subscribed to topic(s): esp21_alarms
+2020-05-16 12:48:34,336 INFO o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2020-05-16 12:48:34,336 INFO o.s.k.l.KafkaMessageListenerContainer [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] esp21_1: partitions revoked: []
+2020-05-16 12:48:34,337 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:48:34,341 INFO o.a.k.c.a.AdminClientConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = default
+	client.id = 
+	connections.max.idle.ms = 300000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 120000
+	retries = 5
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+2020-05-16 12:48:34,347 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:48:34,347 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:48:34,347 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629714347
+2020-05-16 12:48:34,354 INFO o.a.k.c.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:48:34,354 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:48:34,359 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:48:34,360 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Revoking previously assigned partitions []
+2020-05-16 12:48:34,360 INFO o.s.k.l.KafkaMessageListenerContainer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] esp21_1: partitions revoked: []
+2020-05-16 12:48:34,362 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:48:34,374 INFO o.a.k.c.c.ConsumerConfig [main] ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = default
+	client.id = 
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = esp21_1
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = https
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2020-05-16 12:48:34,378 INFO o.a.k.c.u.AppInfoParser [main] Kafka version: 2.3.1
+2020-05-16 12:48:34,379 INFO o.a.k.c.u.AppInfoParser [main] Kafka commitId: 18a913733fb71c01
+2020-05-16 12:48:34,379 INFO o.a.k.c.u.AppInfoParser [main] Kafka startTimeMs: 1589629714378
+2020-05-16 12:48:34,379 INFO o.a.k.c.c.KafkaConsumer [main] [Consumer clientId=consumer-3, groupId=esp21_1] Subscribed to topic(s): esp21_joints
+2020-05-16 12:48:34,379 INFO o.s.s.c.ThreadPoolTaskScheduler [main] Initializing ExecutorService
+2020-05-16 12:48:34,380 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:48:34,386 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Successfully joined group with generation 38
+2020-05-16 12:48:34,392 INFO o.s.m.s.b.SimpleBrokerMessageHandler [main] Starting...
+2020-05-16 12:48:34,392 INFO o.s.m.s.b.SimpleBrokerMessageHandler [main] BrokerAvailabilityEvent[available=true, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-05-16 12:48:34,393 INFO o.s.m.s.b.SimpleBrokerMessageHandler [main] Started.
+2020-05-16 12:48:34,402 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Setting newly assigned partitions: esp21_logs-0
+2020-05-16 12:48:34,405 INFO o.a.k.c.Metadata [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Cluster ID: _xG2ULhATZGInfNr3tUv1w
+2020-05-16 12:48:34,407 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Discovered group coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:48:34,411 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Revoking previously assigned partitions []
+2020-05-16 12:48:34,412 INFO o.s.k.l.KafkaMessageListenerContainer [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] esp21_1: partitions revoked: []
+2020-05-16 12:48:34,412 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:48:34,415 INFO p.e.p.B.K.KafkaTest [main] Started KafkaTest in 6.198 seconds (JVM running for 7.369)
+2020-05-16 12:48:34,418 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] (Re-)joining group
+2020-05-16 12:48:34,420 INFO o.a.k.c.c.i.ConsumerCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Setting offset for partition esp21_logs-0 to the committed offset FetchPosition{offset=5, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=127.0.0.1:9092 (id: 1001 rack: null), epoch=0}}
+2020-05-16 12:48:34,429 INFO o.s.k.l.KafkaMessageListenerContainer [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] esp21_1: partitions assigned: [esp21_logs-0]
+2020-05-16 12:48:34,631 INFO o.s.m.s.b.SimpleBrokerMessageHandler [SpringContextShutdownHook] Stopping...
+2020-05-16 12:48:34,631 INFO o.s.m.s.b.SimpleBrokerMessageHandler [SpringContextShutdownHook] BrokerAvailabilityEvent[available=false, SimpleBrokerMessageHandler [DefaultSubscriptionRegistry[cache[0 destination(s)], registry[0 sessions]]]]
+2020-05-16 12:48:34,631 INFO o.s.m.s.b.SimpleBrokerMessageHandler [SpringContextShutdownHook] Stopped.
+2020-05-16 12:48:34,634 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Member consumer-1-8df3146f-b6f2-4be7-9714-be4542f59b8f sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:48:34,634 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Member consumer-3-9801a8c1-5087-41a6-8bca-1ba2f8cde78a sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:48:34,634 INFO o.a.k.c.c.i.AbstractCoordinator [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Member consumer-2-78e53a85-7274-4ac2-8e63-b112e53e418b sending LeaveGroup request to coordinator 127.0.0.1:9092 (id: 2147482646 rack: null)
+2020-05-16 12:48:34,635 INFO o.a.k.c.c.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] [Consumer clientId=consumer-1, groupId=esp21_1] Unsubscribed all topics or patterns and assigned partitions
+2020-05-16 12:48:34,635 INFO o.a.k.c.c.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] [Consumer clientId=consumer-3, groupId=esp21_1] Unsubscribed all topics or patterns and assigned partitions
+2020-05-16 12:48:34,635 INFO o.a.k.c.c.KafkaConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] [Consumer clientId=consumer-2, groupId=esp21_1] Unsubscribed all topics or patterns and assigned partitions
+2020-05-16 12:48:34,636 INFO o.s.s.c.ThreadPoolTaskScheduler [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] Shutting down ExecutorService
+2020-05-16 12:48:34,636 INFO o.s.s.c.ThreadPoolTaskScheduler [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] Shutting down ExecutorService
+2020-05-16 12:48:34,636 INFO o.s.s.c.ThreadPoolTaskScheduler [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] Shutting down ExecutorService
+2020-05-16 12:48:34,648 INFO o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] esp21_1: Consumer stopped
+2020-05-16 12:48:34,648 INFO o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#2-0-C-1] esp21_1: Consumer stopped
+2020-05-16 12:48:34,648 INFO o.s.k.l.KafkaMessageListenerContainer$ListenerConsumer [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] esp21_1: Consumer stopped
+2020-05-16 12:48:34,652 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'brokerChannelExecutor'
+2020-05-16 12:48:34,652 INFO o.s.s.c.ThreadPoolTaskScheduler [SpringContextShutdownHook] Shutting down ExecutorService 'messageBrokerTaskScheduler'
+2020-05-16 12:48:34,652 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'clientOutboundChannelExecutor'
+2020-05-16 12:48:34,652 INFO o.s.s.c.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'clientInboundChannelExecutor'
+2020-05-16 12:48:34,653 INFO o.s.o.j.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-16 12:48:34,655 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2020-05-16 12:48:34,661 INFO c.z.h.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
