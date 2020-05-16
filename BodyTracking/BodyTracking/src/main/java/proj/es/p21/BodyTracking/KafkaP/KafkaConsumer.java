@@ -134,10 +134,14 @@ public class KafkaConsumer {
 
     }
     
+    /*
+    
     @KafkaListener(topics = "esp21_logs", groupId = "esp21_1") //topico e groupID
     public void consumeLogs(String message) throws IOException{
         
         System.out.println("LOGS " +  message);
         
     }
+
+    */
 }

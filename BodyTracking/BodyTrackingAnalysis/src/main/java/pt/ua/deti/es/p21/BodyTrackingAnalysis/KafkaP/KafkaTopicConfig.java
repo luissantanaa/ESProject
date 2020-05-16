@@ -11,8 +11,8 @@ import org.springframework.kafka.core.KafkaAdmin;
 
 @Configuration
 public class KafkaTopicConfig {
-    //@Value(value = "192.168.160.103:9093")
-    @Value(value = "localhost:9092")
+    @Value(value = "192.168.160.103:9093")
+    //@Value(value = "localhost:9092")
     private String bootstrapAddress;
  
     @Bean
@@ -32,12 +32,12 @@ public class KafkaTopicConfig {
     public NewTopic topic2() {
          return new NewTopic("esp21_joints", 1, (short) 1);
     }
-    /*
+    
     @Bean
     public NewTopic topic3() {
          return new NewTopic("esp21_logs", 1, (short) 1);
     }
 
-    */
+    
     
 }
