@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         
-        stage('Clean and Build') {
+        stage('Build BT') {
             agent{
                 docker{
                     image 'maven:3-alpine'
@@ -11,8 +11,21 @@ pipeline {
             }
             steps {
                 //clean maven project and create war file
-                sh "rm -r BodyTracking/BodyTracking/target/* || true"
                 sh "cd BodyTracking/BodyTracking/ && mvn clean -Dmaven.test.skip package "
+                echo "Body Tracking System built"
+            }
+                
+        }
+        stage('Build Analysis') {
+            agent{
+                docker{
+                    image 'maven:3-alpine'
+                    args '-v $HOME/.m2:/root/.m2'
+                }
+            }
+            steps {
+               sh "cd BodyTracking/BodyTrackingAnalysis/ && mvn clean -Dmaven.test.skip package "
+               echo "Analisys System built"
             }
                 
         }
