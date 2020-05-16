@@ -45,13 +45,6 @@ import pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP.KafkaProducer;
 @SpringBootTest()
 
 
-/*@EmbeddedKafka(
-    partitions = 1, 
-    controlledShutdown = false,
-    brokerProperties = {
-        "listeners=PLAINTEXT://localhost:9092", 
-        "port=9092"
-})*/
 public class KafkaTest {
     private KafkaListenerTest ktest;
     
