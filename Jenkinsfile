@@ -131,18 +131,12 @@ pipeline {
             }
         }
 
-
-        stage("Clean WS"){
-            agent any
-            steps{
-                
-                cleanWs()
-
-            }
-
-        }
     }
     post {
+        always{
+            cleanWs()
+            echo 'workspace cleaned'
+        }
         success {
             echo 'Pipeline was successful'
         }
