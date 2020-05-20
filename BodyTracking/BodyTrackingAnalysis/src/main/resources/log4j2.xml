@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN" monitorInterval="30">
     <Appenders>
-	    <Kafka name="Kafka" topic="esp21_logs">
-	      <PatternLayout pattern="%date -> %message"/>
-		<Property name="bootstrap.servers">localhost:9092</Property>
+	    <Kafka name="KafkaAlarms" topic="esp21_alarms">
+	        <PatternLayout pattern="%message"/>
+		    <Property name="bootstrap.servers">localhost:9092</Property>
 	    </Kafka>
+        
 	  </Appenders>
      
     <Loggers>
       <Root level="INFO">
       </Root>
         <Logger name="pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP" level="DEBUG"> 
-          <AppenderRef ref="Kafka"/>
+          <AppenderRef ref="KafkaAlarms"/>
         </Logger>
   </Loggers>
 </Configuration>

@@ -80,10 +80,29 @@ public class BodyTrackingController {
         if(user_tmp.getPassword().equals(user.getPassword())){
             loggedIn.put(user.getUsername(), true);
             m.addAttribute("username", user.getUsername());
-            
-            logger.debug("LOGIN");
+            String pattern = "yyyy-MM-dd HH:mm:ss";
+            DateFormat df = new SimpleDateFormat(pattern);
+    
+            Date today = Calendar.getInstance().getTime();
+    
+            String reportDate = df.format(today);
+    
+            elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
+            elk_OBJ.put("log", "LOGIN");
+            logger.debug(elk_OBJ);
         }else{
-            logger.debug("LOGIN FAILED " + user.getUsername()  );
+            String pattern = "yyyy-MM-dd HH:mm:ss";
+            DateFormat df = new SimpleDateFormat(pattern);
+    
+            Date today = Calendar.getInstance().getTime();
+    
+            String reportDate = df.format(today);
+    
+            elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
+            elk_OBJ.put("username", user.getUsername());
+            elk_OBJ.put("id_user", String.valueOf(user.getId()));
+            
+            logger.warn(elk_OBJ);
         }
 
         
@@ -110,7 +129,17 @@ public class BodyTrackingController {
         
         
         elk_OBJ = new JSONObject();
-        logger.debug("SIGN UP");
+        String pattern = "yyyy-MM-dd HH:mm:ss";
+        DateFormat df = new SimpleDateFormat(pattern);
+
+        Date today = Calendar.getInstance().getTime();
+
+        String reportDate = df.format(today);
+
+        elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
+        elk_OBJ.put("log", "SIGNUP");
+       
+        logger.debug(elk_OBJ);
         return "redirect:login";
     }
     
