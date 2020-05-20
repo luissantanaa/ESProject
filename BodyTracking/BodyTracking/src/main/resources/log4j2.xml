@@ -4,10 +4,12 @@
         <Kafka name="KafkaLogs" topic="esp21_logs">
 	        <PatternLayout pattern="%message"/>
 		    <Property name="bootstrap.servers">localhost:9092</Property>
+                    <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG"/>
 	    </Kafka>
         <Kafka name="KafkaFailures" topic="esp21_failures">
 	        <PatternLayout pattern="%message"/>
 		    <Property name="bootstrap.servers">localhost:9092</Property>
+                     <LevelRangeFilter minLevel="WARN" maxLevel="WARN"/>
 	    </Kafka>
         <RollingFile name="RollingFile" fileName="logs/app.log"
                         filePattern="logs/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
@@ -22,15 +24,13 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Logger name="proj.es.p21.BodyTracking.RestP" level="WARN" additivity="true">
-            <AppenderRef  ref = "KafkaFailures" />
-        </Logger>
-        <Logger name="proj.es.p21.BodyTracking.RestP" level="DEBUG" additivity="true">
+        <Logger name="proj.es.p21.BodyTracking.RestP" level="all" additivity="true">
             <AppenderRef  ref = "RollingFile" />
             <AppenderRef  ref = "KafkaLogs" />
+            <AppenderRef  ref = "KafkaFailures" />
         </Logger>
         
-        <Root level="INFO" additivity="true">
+        <Root level="all" additivity="true">
             <AppenderRef ref="RollingFile" />
             
         </Root>

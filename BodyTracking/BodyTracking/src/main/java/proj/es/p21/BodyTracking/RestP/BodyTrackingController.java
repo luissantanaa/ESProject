@@ -6,7 +6,11 @@
 package proj.es.p21.BodyTracking.RestP;
 
 import java.lang.ProcessBuilder.Redirect;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
@@ -71,38 +75,36 @@ public class BodyTrackingController {
     
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String login(@ModelAttribute User user, Model m){
-        
+        System.out.println("\n" + user.toString());
         Optional<User> optional_user = usersRep.findById(user.getUsername());
         User user_tmp = optional_user.get();
         System.out.print(user_tmp.toString());
         
         elk_OBJ = new JSONObject();
+        String pattern = "yyyy-MM-dd HH:mm:ss";
+        DateFormat df = new SimpleDateFormat(pattern);
+
+        Date today = Calendar.getInstance().getTime();
+
+        String reportDate = df.format(today);
+
         if(user_tmp.getPassword().equals(user.getPassword())){
             loggedIn.put(user.getUsername(), true);
             m.addAttribute("username", user.getUsername());
-            String pattern = "yyyy-MM-dd HH:mm:ss";
-            DateFormat df = new SimpleDateFormat(pattern);
-    
-            Date today = Calendar.getInstance().getTime();
-    
-            String reportDate = df.format(today);
     
             elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
             elk_OBJ.put("log", "LOGIN");
             logger.debug(elk_OBJ);
         }else{
-            String pattern = "yyyy-MM-dd HH:mm:ss";
-            DateFormat df = new SimpleDateFormat(pattern);
-    
-            Date today = Calendar.getInstance().getTime();
-    
-            String reportDate = df.format(today);
-    
+            System.out.print("AQUI1");
+            
             elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
             elk_OBJ.put("username", user.getUsername());
-            elk_OBJ.put("id_user", String.valueOf(user.getId()));
+            elk_OBJ.put("id_user", String.valueOf(user_tmp.getId()));
             
             logger.warn(elk_OBJ);
+            
+            System.out.print("AQUI");
         }
 
         

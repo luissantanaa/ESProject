@@ -84,18 +84,18 @@ public class KafkaListener {
             producer.sendMessage(" 0 : " + numPeople);
         }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) && Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) ){
             producer.sendMessage("1");
-            logger.debug("BOTH ARMS UP");
+            logger.info("BOTH_ARMS");
         }else if (Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("2");
             System.out.print("ARM UP");
-            logger.debug("LEFT ARM UP");
+            logger.info("LEFT_ARM");
         }else if (Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("3");
-            logger.debug("RIGHT ARM UP");
+            logger.info("RIGHT_ARM");
             System.out.print("ARM UP");
         }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) &&Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             producer.sendMessage("4");
-            logger.debug("HANDSTAND");
+            logger.info("HANDSTAND");
         }
         
         
