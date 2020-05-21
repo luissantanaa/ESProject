@@ -2,7 +2,7 @@ pipeline {
     agent any
     stages {
         
-        stage('Build BT') {
+        stage('Clean BT') {
             agent{
                 docker{
                     image 'maven:3-alpine'
@@ -16,7 +16,7 @@ pipeline {
             }
                 
         }
-        stage('Build Analysis') {
+        stage('Clean Analysis') {
             agent{
                 docker{
                     image 'maven:3-alpine'
@@ -24,10 +24,9 @@ pipeline {
                 }
             }
             steps {
-               sh "cd BodyTracking/BodyTrackingAnalysis/ && mvn clean -Dmaven.test.skip package "
+               sh "cd BodyTracking/BodyTrackingAnalysis/ && mvn clean"
                echo "Analisys System built"
-	       sh "cd BodyTracking/BodyTrackingAnalysis/target/ && ls "
-               
+	           
             }
                 
         }
@@ -63,7 +62,22 @@ pipeline {
             }
         }
 
-        
+        stage('Build'){
+            when{
+                branch 'master'
+            }
+            agent{
+                docker{
+                    image 'maven:3-alpine'
+                    args '-v $HOME/.m2:/root/.m2'
+                }
+            }
+            steps{
+                sh 'cd BodyTracking/BodyTrackingAnalysis/ && mvn package'
+                sh 'cd BodyTracking/BodyTracking/ && mvn package'
+
+            }
+        }
         stage('DeployAS RuntimeVM') {
             when{
                 branch 'master'          
@@ -74,7 +88,7 @@ pipeline {
                 //Using docker registry to save docker image
                 
                 sh  '''
-			docker build -t esp21bodytracking_as_build:latest BodyTracking/BodyTrackingAnalysis/
+			            docker build -t esp21bodytracking_as_build:latest BodyTracking/BodyTrackingAnalysis/
                         docker tag  esp21bodytracking_as_build:latest 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
                         docker push 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest                        
                         
