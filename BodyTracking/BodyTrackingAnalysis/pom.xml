@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>pt.ua.deti.es.p21</groupId>
 	<artifactId>BodyTrackingAnalysis</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>BodyTrackingAnalysis</name>
 	<description>Demo project for Spring Boot</description>
     <properties>
@@ -82,6 +82,21 @@
         </dependency>
          	
 	</dependencies>
+        
+        
+    <distributionManagement>
+        <repository>
+            <id>central</id>
+            <name>c04a282c7a6d-releases</name>
+            <url>http://192.168.160.99:8081/artifactory/libs-release-local</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>c04a282c7a6d-snapshots</name>
+            <url>http://192.168.160.99:8081/artifactory/libs-snapshot-local</url>
+        </snapshotRepository>
+    </distributionManagement>
+	
 
     <build>
         <plugins>

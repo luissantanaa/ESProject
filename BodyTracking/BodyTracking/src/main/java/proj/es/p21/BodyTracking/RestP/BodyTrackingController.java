@@ -242,4 +242,15 @@ public class BodyTrackingController {
     public String stored_info(Model m){
         return null;
     }
+    
+    
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+    public String get_logout(@RequestParam(required = false) String username, Model m){
+        if(loggedIn.containsKey(username)){
+            if(loggedIn.get(username)){
+                loggedIn.put(username, false);
+            }
+        }
+        return "redirect:home";
+    }
 }
