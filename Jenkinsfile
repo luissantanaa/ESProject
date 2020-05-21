@@ -72,7 +72,7 @@ pipeline {
 
                 echo "deploying Body Tracking Analysis System..."
 
-                sh "cd BodyTracking/BodyTracking/Analysis && mvn -f pom.xml -s ../settings.xml deploy"
+                sh "cd BodyTracking/BodyTrackingAnalysis && mvn -f pom.xml -s ../settings.xml deploy"
 		        
                 echo "deploying..."
             }
