@@ -93,7 +93,7 @@ pipeline {
                     sh '''
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21bodytrackingcontainer_as|| echo "container down"
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker pull 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
-                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21001:21001 -d --name esp21bodytrackingcontainer_as 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest 
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21001:80 -d --name esp21bodytrackingcontainer_as 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest 
                     '''
                 }
             
@@ -118,7 +118,7 @@ pipeline {
                     sh '''
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker rm -f esp21bodytrackingcontainer_bt|| echo "container down"
                         ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker pull 192.168.160.99:5000/p21/esp21bodytracking_build:latest
-                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:21000 -d --name esp21bodytrackingcontainer_bt 192.168.160.99:5000/p21/esp21bodytracking_build:latest 
+                        ssh -o StrictHostKeyChecking=no esp21@192.168.160.103 docker run -p 21000:80 -d --name esp21bodytrackingcontainer_bt 192.168.160.99:5000/p21/esp21bodytracking_build:latest 
                     '''
                 }
             
