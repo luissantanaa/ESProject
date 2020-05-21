@@ -104,8 +104,7 @@ pipeline {
                 //Using docker registry to save docker image
                 
                 sh  '''
-			cd BodyTracking/BodyTrackingAnalysis
-                        docker build -t esp21bodytracking_as_build:latest  .
+			docker build -f BodyTracking/BodyTrackingAnalysis/Dockerfile -t esp21bodytracking_as_build:latest  .
                         docker tag  esp21bodytracking_as_build:latest 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
                         docker push 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest                        
                         
@@ -130,8 +129,8 @@ pipeline {
             steps {
                 //Using docker registry to save docker image
                 
-                sh  '''	cd BodyTracking/BodyTracking
-                        docker build -t esp21bodytracking_build:latest  .
+                sh  '''	
+                        docker build -f BodyTracking/BodyTracking/Dockerfile -t esp21bodytracking_build:latest  .
                         docker tag  esp21bodytracking_build:latest 192.168.160.99:5000/p21/esp21bodytracking_build:latest
                         docker push 192.168.160.99:5000/p21/esp21bodytracking_build:latest                        
                         
