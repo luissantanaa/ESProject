@@ -74,8 +74,9 @@ pipeline {
             }
             steps{
                 sh 'cd BodyTracking/BodyTrackingAnalysis/ && mvn package'
+                sh 'docker build -t esp21bodytracking_as_build:latest BodyTracking/BodyTrackingAnalysis/'
                 sh 'cd BodyTracking/BodyTracking/ && mvn package'
-
+                sh 'docker build -t esp21bodytracking_build:latest BodyTracking/BodyTracking/'
             }
         }
         stage('DeployAS RuntimeVM') {
@@ -88,8 +89,7 @@ pipeline {
                 //Using docker registry to save docker image
                 
                 sh  '''
-			            docker build -t esp21bodytracking_as_build:latest BodyTracking/BodyTrackingAnalysis/
-                        docker tag  esp21bodytracking_as_build:latest 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
+			            docker tag  esp21bodytracking_as_build:latest 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
                         docker push 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest                        
                         
                     '''
@@ -114,7 +114,6 @@ pipeline {
                 //Using docker registry to save docker image
                 
                 sh  '''	
-                        docker build -t esp21bodytracking_build:latest BodyTracking/BodyTracking/ 
                         docker tag  esp21bodytracking_build:latest 192.168.160.99:5000/p21/esp21bodytracking_build:latest
                         docker push 192.168.160.99:5000/p21/esp21bodytracking_build:latest                        
                         
