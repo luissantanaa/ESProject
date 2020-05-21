@@ -26,6 +26,7 @@ pipeline {
             steps {
                sh "cd BodyTracking/BodyTrackingAnalysis/ && mvn clean -Dmaven.test.skip package "
                echo "Analisys System built"
+	       sh "cd /target && ls"
             }
                 
         }
