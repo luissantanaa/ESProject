@@ -63,25 +63,8 @@ pipeline {
             }
         }
 
-        stage('Pre-Deploy'){
-            when{
-                branch 'master'          
-            }
-            agent any
-            steps{
-                echo "deploying Body Tracking..."
-                sh "cd BodyTracking/BodyTracking/ && mvn -f pom.xml -s ../settings.xml deploy"
-
-                echo "deploying Body Tracking Analysis System..."
-
-                sh "cd BodyTracking/BodyTrackingAnalysis && mvn -f pom.xml -s ../settings.xml deploy"
-		        
-                echo "deploying..."
-            }
-
-        }
         
-        stage('DeployAS') {
+        stage('DeployAS RuntimeVM') {
             when{
                 branch 'master'          
             }
@@ -107,7 +90,7 @@ pipeline {
             }
         }
 
-        stage('DeployBT') {
+        stage('DeployBT Runtime VM') {
             when{
                 branch 'master'          
             }
@@ -132,6 +115,25 @@ pipeline {
             
             }
         }
+
+	stage('Deploy JFROG'){
+            when{
+                branch 'master'          
+            }
+            agent any
+            steps{
+                echo "deploying Body Tracking..."
+                sh "cd BodyTracking/BodyTracking/ && mvn -f pom.xml -s ../settings.xml deploy"
+
+                echo "deploying Body Tracking Analysis System..."
+
+                sh "cd BodyTracking/BodyTrackingAnalysis && mvn -f pom.xml -s ../settings.xml deploy"
+		        
+                echo "deploying..."
+            }
+
+        }
+        
 
     }
     post {
