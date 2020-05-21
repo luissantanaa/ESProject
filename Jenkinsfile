@@ -66,12 +66,8 @@ pipeline {
             when{
                 branch 'master'
             }
-            agent{
-                docker{
-                    image 'maven:3-alpine'
-                    args '-v $HOME/.m2:/root/.m2'
-                }
-            }
+            agent any
+            
             steps{
                 sh 'cd BodyTracking/BodyTrackingAnalysis/ && mvn package'
                 sh 'docker build -t esp21bodytracking_as_build:latest BodyTracking/BodyTrackingAnalysis/'
