@@ -3,12 +3,12 @@
     <Appenders>
         <Kafka name="KafkaLogs" topic="esp21_logs">
 	        <PatternLayout pattern="%message"/>
-		    <Property name="bootstrap.servers">localhost:9092</Property>
+		    <Property name="bootstrap.servers">192.168.160.103:9093</Property>
                     <LevelRangeFilter minLevel="DEBUG" maxLevel="DEBUG"/>
 	    </Kafka>
         <Kafka name="KafkaFailures" topic="esp21_failures">
 	        <PatternLayout pattern="%message"/>
-		    <Property name="bootstrap.servers">localhost:9092</Property>
+		    <Property name="bootstrap.servers">192.168.160.103:9093</Property>
                      <LevelRangeFilter minLevel="WARN" maxLevel="WARN"/>
 	    </Kafka>
         <RollingFile name="RollingFile" fileName="logs/app.log"

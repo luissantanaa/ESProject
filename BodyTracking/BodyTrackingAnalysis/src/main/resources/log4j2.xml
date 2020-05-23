@@ -3,7 +3,7 @@
     <Appenders>
 	    <Kafka name="KafkaAlarms" topic="esp21_alarms">
 	        <PatternLayout pattern="%message"/>
-		    <Property name="bootstrap.servers">localhost:9092</Property>
+		    <Property name="bootstrap.servers">192.168.160.103:9093</Property>
                     <LevelRangeFilter minLevel="INFO" maxLevel="INFO"/>
 	    </Kafka>
         
