@@ -52,6 +52,7 @@ public class BodyTrackingController {
     @Autowired
     JointCollectionRepository jointsRep;
     
+    
     private JSONObject elk_OBJ;
 
     
@@ -91,19 +92,86 @@ public class BodyTrackingController {
         if(user_tmp.getPassword().equals(user.getPassword())){
             loggedIn.put(user.getUsername(), true);
             m.addAttribute("username", user.getUsername());
-    
+            List<JSONObject> ljson = new ArrayList<>();
+            
+            String[] fields = {"data", "log"};
+            
+            String[] types = {"string", "string"};
+                    
+            for(int i=0;i<fields.length;i++){
+                JSONObject tmp = new JSONObject();
+                tmp.put("field", fields[i]);
+                tmp.put("optional", false);
+                tmp.put("type", types[i]);
+                ljson.add(tmp);
+            }
+            
+            
+            JSONObject tmp2 = new JSONObject();
+            
+             
+            tmp2.put("type", "struct");
+            tmp2.put("fields", ljson);
+            tmp2.put("name", "esp21_logs");
+            tmp2.put("optional", false);
+            
+            
+            
             elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
             elk_OBJ.put("log", "LOGIN");
-            logger.debug(elk_OBJ);
+            
+            
+            JSONObject mess = new JSONObject();
+            
+            mess.put("schema", tmp2);
+            mess.put("payload", elk_OBJ);
+            
+            
+            logger.debug(mess.toString());
+            
+            
         }else{
             System.out.print("AQUI1");
             
+            
+            List<JSONObject> ljson = new ArrayList<>();
+            
+            String[] fields = {"data", "id_user", "username"};
+            
+            String[] types = {"string", "int32", "string"};
+                    
+            for(int i=0;i<fields.length;i++){
+                JSONObject tmp = new JSONObject();
+                tmp.put("field", fields[i]);
+                tmp.put("optional", false);
+                tmp.put("type", types[i]);
+                ljson.add(tmp);
+            }
+            
+            
+            JSONObject tmp2 = new JSONObject();
+            
+             
+            tmp2.put("type", "struct");
+            tmp2.put("fields", ljson);
+            tmp2.put("name", "esp21_alarms");
+            tmp2.put("optional", false);
+            
+            
+            
             elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
             elk_OBJ.put("username", user.getUsername());
-            elk_OBJ.put("id_user", String.valueOf(user_tmp.getId()));
+            elk_OBJ.put("id_user", user_tmp.getId());
             
-            logger.warn(elk_OBJ);
             
+            
+            JSONObject mess = new JSONObject();
+            
+            mess.put("schema", tmp2);
+            mess.put("payload", elk_OBJ);
+            
+            
+            logger.warn(mess.toString());
             System.out.print("AQUI");
         }
 
@@ -137,11 +205,45 @@ public class BodyTrackingController {
         Date today = Calendar.getInstance().getTime();
 
         String reportDate = df.format(today);
+        List<JSONObject> ljson = new ArrayList<>();
+            
+        String[] fields = {"data", "log"};
+
+        String[] types = {"string", "string"};
+
+        for(int i=0;i<fields.length;i++){
+            JSONObject tmp = new JSONObject();
+            tmp.put("field", fields[i]);
+            tmp.put("optional", false);
+            tmp.put("type", types[i]);
+            ljson.add(tmp);
+        }
+
+
+        JSONObject tmp2 = new JSONObject();
+
+
+        tmp2.put("type", "struct");
+        tmp2.put("fields", ljson);
+        tmp2.put("name", "esp21_logs");
+        tmp2.put("optional", false);
+
+
 
         elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
         elk_OBJ.put("log", "SIGNUP");
        
-        logger.debug(elk_OBJ);
+
+
+        JSONObject mess = new JSONObject();
+
+        mess.put("schema", tmp2);
+        mess.put("payload", elk_OBJ);
+
+
+        
+        logger.debug(mess.toString());
+        
         return "redirect:login";
     }
     
