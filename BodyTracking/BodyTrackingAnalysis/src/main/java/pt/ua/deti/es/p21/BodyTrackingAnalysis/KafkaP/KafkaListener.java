@@ -81,23 +81,24 @@ public class KafkaListener {
         elk_OBJ = new JSONObject();
         if (joints_divided.length > 25){
             int numPeople = (int) Math.ceil(joints_divided.length/25);
-            producer.sendMessage(" 0 : " + numPeople);
+            
+            elk_OBJ.put("alarm", "NUM_PEOPLE");
+            
+            elk_OBJ.put("nump", numPeople);
         }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) && Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) ){
-            producer.sendMessage("1");
-            logger.info("BOTH_ARMS");
+            elk_OBJ.put("alarm", "BOTH_ARMS");
         }else if (Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
-            producer.sendMessage("2");
-            System.out.print("ARM UP");
-            logger.info("LEFT_ARM");
+            
+            elk_OBJ.put("alarm", "LEFT_ARM");
         }else if (Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
-            producer.sendMessage("3");
-            logger.info("RIGHT_ARM");
-            System.out.print("ARM UP");
+            
+            elk_OBJ.put("alarm", "RIGHT_ARM");
         }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) &&Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
-            producer.sendMessage("4");
-            logger.info("HANDSTAND");
+            elk_OBJ.put("alarm", "HANDSTAND");
         }
         
+        
+        logger.info(elk_OBJ.toString());
         
     }
     /*

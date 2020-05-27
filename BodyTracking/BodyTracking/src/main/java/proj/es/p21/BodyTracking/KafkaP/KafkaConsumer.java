@@ -109,19 +109,18 @@ public class KafkaConsumer {
     
     
     @KafkaListener(topics = "esp21_alarms", groupId = "esp21_1") //topico e groupID
-    public void consumeAlarms(String message) throws IOException{
+    public void consumeAlarms(JSONObject message) throws IOException{
         
-        System.out.println("ALARMS " +  message);
         String  messageToSend;
-        if(message.contains(":")){
-            messageToSend = "Sensor are detecting " + message.split(":")[1] + " persons!" ;
-        }else if(message.equals("1")){
+        if(message.get("alarms").equals("NUM_PEOPLE")){
+            messageToSend = "Sensor are detecting " + message.get("nump") + " persons!" ;
+        }else if(message.get("alarms").equals("BOTH_ARMS")){
             messageToSend = "Both Arms UP!";
-        }else if(message.equals("2")){
+        }else if(message.get("alarms").equals("LEFT_ARM")){
             messageToSend="Left Arm UP!";
-        }else if(message.equals("3")){
+        }else if(message.get("alarms").equals("RIGHT_ARM")){
             messageToSend="Right Arm UP!";
-        }else if(message.equals("4")){
+        }else if(message.get("alarms").equals("HANDSTAND")){
             messageToSend="Handstand";
         }else{
             messageToSend="Cannot discriminate position!";

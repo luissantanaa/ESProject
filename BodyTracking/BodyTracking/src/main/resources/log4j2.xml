@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="WARN">
+<Configuration>
     <Appenders>
         <Kafka name="KafkaLogs" topic="esp21_logs">
 	        <PatternLayout pattern="%message"/>
@@ -20,8 +20,6 @@
         </Logger>
         
         <Root level="all" additivity="true">
-            <AppenderRef  ref = "KafkaLogs" />
-            <AppenderRef  ref = "KafkaFailures" />
             
         </Root>
     </Loggers>

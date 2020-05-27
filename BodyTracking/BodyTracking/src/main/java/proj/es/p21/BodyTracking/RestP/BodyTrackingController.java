@@ -82,16 +82,17 @@ public class BodyTrackingController {
         System.out.print(user_tmp.toString());
         
         elk_OBJ = new JSONObject();
-        String pattern = "yyyy-MM-dd HH:mm:ss";
-        DateFormat df = new SimpleDateFormat(pattern);
+        //String pattern = "yyyy-MM-dd HH:mm:ss";
+        //DateFormat df = new SimpleDateFormat(pattern);
 
-        Date today = Calendar.getInstance().getTime();
+        //Date today = Calendar.getInstance().getTime();
 
-        String reportDate = df.format(today);
+        //String reportDate = df.format(today);
 
         if(user_tmp.getPassword().equals(user.getPassword())){
             loggedIn.put(user.getUsername(), true);
             m.addAttribute("username", user.getUsername());
+            /*
             List<JSONObject> ljson = new ArrayList<>();
             
             String[] fields = {"data", "log"};
@@ -118,21 +119,22 @@ public class BodyTrackingController {
             
             
             elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
+            */
             elk_OBJ.put("log", "LOGIN");
             
             
-            JSONObject mess = new JSONObject();
+            //JSONObject mess = new JSONObject();
             
-            mess.put("schema", tmp2);
-            mess.put("payload", elk_OBJ);
+            //mess.put("schema", tmp2);
+            //mess.put("payload", elk_OBJ);
             
             
-            logger.debug(mess.toString());
+            logger.debug(elk_OBJ.toString());
             
             
         }else{
             System.out.print("AQUI1");
-            
+            /*
             
             List<JSONObject> ljson = new ArrayList<>();
             
@@ -160,18 +162,19 @@ public class BodyTrackingController {
             
             
             elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
+            */
             elk_OBJ.put("username", user.getUsername());
             elk_OBJ.put("id_user", user_tmp.getId());
             
             
             
-            JSONObject mess = new JSONObject();
+            //JSONObject mess = new JSONObject();
             
-            mess.put("schema", tmp2);
-            mess.put("payload", elk_OBJ);
+            //mess.put("schema", tmp2);
+            //mess.put("payload", elk_OBJ);
             
             
-            logger.warn(mess.toString());
+            logger.warn(elk_OBJ.toString());
             System.out.print("AQUI");
         }
 
@@ -199,6 +202,7 @@ public class BodyTrackingController {
         
         
         elk_OBJ = new JSONObject();
+        /*
         String pattern = "yyyy-MM-dd HH:mm:ss";
         DateFormat df = new SimpleDateFormat(pattern);
 
@@ -231,18 +235,19 @@ public class BodyTrackingController {
 
 
         elk_OBJ.put("data", reportDate.replace(" ", "T") + "Z");
+        */
         elk_OBJ.put("log", "SIGNUP");
        
 
 
-        JSONObject mess = new JSONObject();
+        //JSONObject mess = new JSONObject();
 
-        mess.put("schema", tmp2);
-        mess.put("payload", elk_OBJ);
+        //mess.put("schema", tmp2);
+        //mess.put("payload", elk_OBJ);
 
 
         
-        logger.debug(mess.toString());
+        logger.debug(elk_OBJ.toString());
         
         return "redirect:login";
     }
