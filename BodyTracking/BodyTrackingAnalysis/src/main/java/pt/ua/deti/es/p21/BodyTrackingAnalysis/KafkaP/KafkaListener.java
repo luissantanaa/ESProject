@@ -85,20 +85,29 @@ public class KafkaListener {
             elk_OBJ.put("alarm", "NUM_PEOPLE");
             
             elk_OBJ.put("nump", numPeople);
+            logger.info(elk_OBJ.toString());
+        
         }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) && Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) ){
             elk_OBJ.put("alarm", "BOTH_ARMS");
+            logger.info(elk_OBJ.toString());
+        
         }else if (Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             
             elk_OBJ.put("alarm", "LEFT_ARM");
+            logger.info(elk_OBJ.toString());
+        
         }else if (Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             
             elk_OBJ.put("alarm", "RIGHT_ARM");
+            logger.info(elk_OBJ.toString());
+        
         }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) &&Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
             elk_OBJ.put("alarm", "HANDSTAND");
+            logger.info(elk_OBJ.toString());
+        
         }
         
         
-        logger.info(elk_OBJ.toString());
         
     }
     /*

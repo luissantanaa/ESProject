@@ -85,8 +85,10 @@ pipeline {
                 //Using docker registry to save docker image
                 
                 sh  '''
-			            docker tag  esp21bodytracking_as_build:latest 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
-                        docker push 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest                        
+	                docker tag  esp21bodytracking_as_build:latest 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
+                        docker push 192.168.160.99:5000/p21/esp21bodytracking_as_build:latest
+			docker image rm 192.168.160.99:5000/p21/esp21bodytracking_as_build
+                                                
                         
                     '''
                 sshagent (credentials: ['RuntimeVMCredP21']) {
@@ -111,7 +113,9 @@ pipeline {
                 
                 sh  '''	
                         docker tag  esp21bodytracking_build:latest 192.168.160.99:5000/p21/esp21bodytracking_build:latest
-                        docker push 192.168.160.99:5000/p21/esp21bodytracking_build:latest                        
+                        docker push 192.168.160.99:5000/p21/esp21bodytracking_build:latest
+			docker image rm 192.168.160.99:5000/p21/esp21bodytracking_build
+                        
                         
                     '''
                 sshagent (credentials: ['RuntimeVMCredP21']) {

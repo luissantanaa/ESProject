@@ -14,7 +14,7 @@ def main():
     username = input()
     #connect to kafka server and transforms data into json
     #producer = KafkaProducer(bootstrap_servers=['192.168.160.103:9092'],value_serializer=lambda x: json.dumps(x).encode('utf-8'))
-    producer = KafkaProducer(bootstrap_servers=['localhost:9092'],value_serializer=lambda x: json.dumps(x).encode('utf-8'))
+    producer = KafkaProducer(bootstrap_servers=['192.168.160.103:9093'],value_serializer=lambda x: json.dumps(x).encode('utf-8'))
 
     #for each file reads all lines
     for f in files:
