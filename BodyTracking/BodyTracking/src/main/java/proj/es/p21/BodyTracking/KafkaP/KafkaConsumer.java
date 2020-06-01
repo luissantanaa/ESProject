@@ -54,12 +54,11 @@ public class KafkaConsumer {
     public void consumeJointReadings(JSONObject jsonO) throws IOException{
         
         
-        byte[] array = new byte[30]; // length is bounded by 30
-        new Random().nextBytes(array);
-        String generatedString = new String(array, Charset.forName("UTF-8"));
+        String generatedString;
+        generatedString = String.valueOf((int) new Random().nextInt(50000000));
  
 
-        System.out.println(jsonO.toString());
+        //System.out.println(jsonO.toString());
         
         String username = (String) jsonO.get("username");
         
@@ -102,7 +101,7 @@ public class KafkaConsumer {
         
         jointsRep.save(JC);
         
-        System.out.println(JC.toString());
+        //System.out.println(JC.toString());
         
 
     }

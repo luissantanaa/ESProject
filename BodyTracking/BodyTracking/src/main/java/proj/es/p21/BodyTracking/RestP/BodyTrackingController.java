@@ -12,8 +12,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 
 import org.apache.logging.log4j.LogManager;
@@ -30,6 +32,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import proj.es.p21.BodyTracking.JpaP.JointCollection;
 import proj.es.p21.BodyTracking.JpaP.JointCollectionRepository;
+import proj.es.p21.BodyTracking.JpaP.PairXY;
+import proj.es.p21.BodyTracking.JpaP.PairXYRepository;
 import proj.es.p21.BodyTracking.JpaP.SortedUser;
 import proj.es.p21.BodyTracking.JpaP.User;
 import proj.es.p21.BodyTracking.JpaP.UsersRepository;
@@ -51,6 +55,10 @@ public class BodyTrackingController {
     
     @Autowired
     JointCollectionRepository jointsRep;
+    
+    @Autowired
+    PairXYRepository movRep;
+    
     
     
     private JSONObject elk_OBJ;
@@ -286,26 +294,32 @@ public class BodyTrackingController {
                 if(loggedIn.get(username)){
                     m.addAttribute("username", username);
                     List<JointCollection> tmp_list = jointsRep.findAll();
-                    List<SortedUser> users_sorted = new ArrayList<>();
+                    List<String> users_sorted = new ArrayList<>();
+                    
                     for(JointCollection j : tmp_list){
+                        boolean equals = false;
+                    
                         if(users_sorted.isEmpty()){
-                            users_sorted.add(new SortedUser(j.getName(), j.getDate_reading_day()));
+                            users_sorted.add(new SortedUser(j.getName(), j.getDate_reading_day()).toString());
                         }else{
-                            boolean equals = false;
-                            for(SortedUser s: users_sorted){
-                                if(s.equals(new SortedUser(j.getName(), j.getDate_reading_day()))){
+                            for(String s: users_sorted){
+                                if(s.equals(new SortedUser(j.getName(), j.getDate_reading_day()).toString())){
                                     equals = true;
                                     break;
                                 }
                             }
 
                             if(!equals){
-                                users_sorted.add(new SortedUser(j.getName(), j.getDate_reading_day()));
+                                users_sorted.add(new SortedUser(j.getName(), j.getDate_reading_day()).toString());
                             }
                         }
                     }
                     
+                    
                     m.addAttribute("readings", users_sorted);
+                    List<JointCollection> coords_list = new ArrayList<>();
+                
+                    m.addAttribute("moves", coords_list);
                     return "stored_data";
                 }
             }
@@ -317,18 +331,55 @@ public class BodyTrackingController {
     
     
     @RequestMapping(value = "/stored/filtered", method = RequestMethod.GET)
-    public String stored_page_sorted(@RequestParam(required = true) String username, @RequestParam(required = true) String patient, @RequestParam(required = true) String date, Model m){
+    public String stored_page_sorted(@RequestParam(required = true) String username, @RequestParam(required = true) String patient_date, Model m){
+        System.out.print(patient_date);
+        String patient = patient_date.split(" ")[0];
+        String date = patient_date.split(" ")[1];
         
         if(loggedIn.containsKey(username)){
             if(loggedIn.get(username)){
                 m.addAttribute("username", username);
-                
                 List<JointCollection> tmp_list = jointsRep.findAll();
-                List<JointCollection> coords_list = new ArrayList<>();
-                
+                List<String> users_sorted = new ArrayList<>();
+
                 for(JointCollection j : tmp_list){
-                    if(j.getName().equals(patient) && j.getDate_reading_day().equals(date)){
-                        coords_list.add(j);
+                    boolean equals = false;
+
+                    if(users_sorted.isEmpty()){
+                        users_sorted.add(new SortedUser(j.getName(), j.getDate_reading_day()).toString());
+                    }else{
+                        for(String s: users_sorted){
+                            if(s.equals(new SortedUser(j.getName(), j.getDate_reading_day()).toString())){
+                                equals = true;
+                                break;
+                            }
+                        }
+
+                        if(!equals){
+                            users_sorted.add(new SortedUser(j.getName(), j.getDate_reading_day()).toString());
+                        }
+                    }
+                }
+
+
+                m.addAttribute("readings", users_sorted);
+                    
+                
+                List<JointCollection> tmp_list_joints = jointsRep.findAll();
+                List<PairXY> list_joints = movRep.findAll();
+                
+                List<PairXY> coords_list = new ArrayList<>();
+                
+ 
+                for(JointCollection j : tmp_list_joints){
+                    System.out.println(j.getName());
+                    System.out.println(j.getDate_reading_day());
+                    if(j.getName().equals(patient) && j.getDate_reading_day().contains(date)){
+                        for(PairXY xy : list_joints){
+                            if(xy.getId().equals(j.getId())){
+                                coords_list.add(xy);
+                            }
+                        }
                     }
                 }
                 
@@ -336,6 +387,8 @@ public class BodyTrackingController {
                 
                 m.addAttribute("date", date);
                 m.addAttribute("moves", coords_list);
+                
+                System.out.print(coords_list);
                 
                 return "stored_data";
             }

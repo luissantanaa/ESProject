@@ -56,6 +56,13 @@ public class SortedUser {
         
         return true;
     }
+
+    @Override
+    public String toString() {
+        return  username +  " "+date_reading ;
+    }
+    
+    
     
     
     
