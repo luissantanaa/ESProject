@@ -11,8 +11,8 @@ import org.springframework.kafka.core.KafkaAdmin;
 
 @Configuration
 public class KafkaTopicConfig {
-    @Value(value = "192.168.160.103:9093")
-    //@Value(value = "localhost:9092")
+    //@Value(value = "192.168.160.103:9093")
+    @Value(value = "localhost:9092")
     private String bootstrapAddress;
  
     @Bean

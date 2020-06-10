@@ -4,8 +4,11 @@ package pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP;
  *
  * @author joao
  */
-
 //import com.springkafkatest.model.event.UpdatedBrandEvent;
+import java.util.Map;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
@@ -13,21 +16,42 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import org.json.JSONObject;
+import org.junit.After;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.listener.ContainerProperties;
+import org.springframework.kafka.listener.KafkaMessageListenerContainer;
+
+import org.springframework.kafka.listener.MessageListener;
 import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.kafka.test.rule.EmbeddedKafkaRule;
+import org.springframework.kafka.test.utils.ContainerTestUtils;
+import org.springframework.kafka.test.utils.KafkaTestUtils;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
 @RunWith(SpringRunner.class)
 @DirtiesContext
-@SpringBootTest()
-//@EmbeddedKafka
+@SpringBootTest(
+    // tell Spring Boot Kafka auto-config about the embedded kafka endpoints
+        
+    //properties = "spring.kafka.bootstrap-servers=${spring.embedded.kafka.brokers}",
+        
+    // slice our unit test app context down to just these specific pieces
+    //classes = {
+        // ...the service to test
+    //    KafkaProducer.class,
+        // ...use standard Sprint Boot kafka auto-config to give us KafkaTemplate, etc
+    //    KafkaTopicConfig.class,
+        // ...and our additional test config
+        //KafkaProducerTest.TestConfig.class
+    //}
+)
+//@EmbeddedKafka(partitions = 1, brokerProperties = {"listeners=PLAINTEXT://localhost:9092", "port=9092"})
 public class KafkaTest {
-    
+
     @Autowired
     private KafkaListener receiver;
 
@@ -35,45 +59,100 @@ public class KafkaTest {
     private KafkaProducer sender;
 
     private static String TOPIC_NAME = "esp21_joints";
-    
+
     @Autowired
     public KafkaTemplate<String, String> template;
-    
+
     //FIXME: everything below here is a fix for the IDE - else @EmbeddedKafka should be enough
-    @Autowired
-    public EmbeddedKafkaRule kafkaEmbedded;
+    //@Autowired
+    //public EmbeddedKafkaRule kafkaEmbedded;
 
     @ClassRule
     public static EmbeddedKafkaRule embeddedKafka = new EmbeddedKafkaRule(1, true, TOPIC_NAME);
-    
-    @Before
+
+    //private KafkaMessageListenerContainer<String, String> container;
+
+    //private BlockingQueue<ConsumerRecord<String, String>> records;
+
+    /*@Before
     public void initTest(){
         receiver = new KafkaListener();
         //sender =  new KafkaProducer();
-    }
-    
+    }*/
+    /*@Before
+    public void setUp() throws Exception {
+        // set up the Kafka consumer properties
+        Map<String, Object> consumerProperties
+                = KafkaTestUtils.consumerProps("sender", "false",
+                        embeddedKafka.getEmbeddedKafka());
+
+        // create a Kafka consumer factory
+        DefaultKafkaConsumerFactory<String, String> consumerFactory
+                = new DefaultKafkaConsumerFactory<String, String>(
+                        consumerProperties);
+
+        // set the topic that needs to be consumed
+        ContainerProperties containerProperties
+                = new ContainerProperties(TOPIC_NAME);
+
+        // create a Kafka MessageListenerContainer
+        container = new KafkaMessageListenerContainer<>(consumerFactory,
+                containerProperties);
+
+        // create a thread safe queue to store the received message
+        records = new LinkedBlockingQueue<>();
+
+        // setup a Kafka message listener
+        container
+                .setupMessageListener(new MessageListener<String, String>() {
+                    @Override
+                    public void onMessage(
+                            ConsumerRecord<String, String> record) {
+                        //OGGER.debug("test-listener received message='{}'", record.toString());
+                        records.add(record);
+                    }
+                });
+
+        // start the container and underlying message listener
+        container.start();
+
+        // wait until the container has the required number of assigned partitions
+        ContainerTestUtils.waitForAssignment(container,
+                embeddedKafka.getEmbeddedKafka().getPartitionsPerTopic());
+    }*/
     
     @Test
-    public void testReceive() throws Exception {
+    public void test() throws Exception {
+        System.out.println("Test ok!");
+    }
+
+    @Test
+    public void testSend() throws Exception {
         System.out.println("Test of receiving joints starting!");
-        String data1 =
-                "428.3214;193.7077,428.3398;158.8254,428.2409;124.0125,433.2831;109.9034,410.2422;110.9774,379.26;90.5726,355.4487;"
-                        + "70.8709,345.8029;70.238,448.2417;140.7686,455.4677;166.7444,452.1386;72.36,449.5869;72.57,419.4047;"
-                        + "193.4234,416.1849;229.2507,415.9737;264.5146,419.9604;273.6193,437.2123;193.9518,431.0868;229.4249,427.6477;"
-                        + "265.4389,432.1964;72.5313,428.2726;72.7042,338.5558;70.8891,341.9003;70.2916,448.1301;200.7179,445.6667;"
-                        + "192.8333";
-        
+        String data1
+                = "428.3214;193.7077,428.3398;158.8254,428.2409;124.0125,433.2831;109.9034,410.2422;110.9774,379.26;90.5726,355.4487;"
+                + "70.8709,345.8029;70.238,448.2417;140.7686,455.4677;166.7444,452.1386;72.36,449.5869;72.57,419.4047;"
+                + "193.4234,416.1849;229.2507,415.9737;264.5146,419.9604;273.6193,437.2123;193.9518,431.0868;229.4249,427.6477;"
+                + "265.4389,432.1964;72.5313,428.2726;72.7042,338.5558;70.8891,341.9003;70.2916,448.1301;200.7179,445.6667;"
+                + "192.8333";
+
         //template.send(TOPIC_NAME, "Sending with default template");
         sender.sendMessage(data1);
-        
+
         JSONObject json = new JSONObject(data1);
 
-        receiver.consumeJointReadings(json);
-        
+        //receiver.consumeJointReadings(json);
+
         assertThat(receiver).isEqualTo(1);
         //System.out.println("Test 1 Successful\n");
     }
-    
+
+    /*@After
+    public void tearDown() {
+        // stop the container
+        container.stop();
+    }*/
+
     /*
     //@Test
     public void both_arms_up_joints() throws InterruptedException, IOException { // BOTH ARMS UP
@@ -170,5 +249,4 @@ public class KafkaTest {
         System.out.println("Test 5 Successful\n");
     
     }*/
-
 }
