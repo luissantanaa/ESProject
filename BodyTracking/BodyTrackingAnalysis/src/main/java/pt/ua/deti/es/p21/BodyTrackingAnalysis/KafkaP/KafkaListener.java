@@ -45,7 +45,7 @@ public class KafkaListener {
     
     
     @org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_2") //topico e groupID
-    public void consumeJointReadings(JSONObject jsonO) throws IOException, JSONException{
+    public int consumeJointReadings(JSONObject jsonO) throws IOException, JSONException{
         
         
         List<UserReading> list_users_reads = usersReadingRep.findAll();
@@ -65,6 +65,9 @@ public class KafkaListener {
         String date_reading = (String) jsonO.get("date_reading");
         
         String listJoints =  (String) jsonO.get("joints");
+        if("".equals(listJoints))
+            return 0;
+        
         joints_divided = listJoints.split(",");
         
         
@@ -108,7 +111,7 @@ public class KafkaListener {
         }
         
         
-        
+        return 1;
     }
     /*
     @org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_2") //topico e groupID
