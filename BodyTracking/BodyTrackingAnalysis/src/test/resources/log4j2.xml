@@ -6,7 +6,9 @@
 		    <Property name="bootstrap.servers">localhost:9092</Property>
                     <LevelRangeFilter minLevel="INFO" maxLevel="INFO"/>
 	    </Kafka>
-        
+            <Console name="console" target="SYSTEM_OUT">
+                <LevelRangeFilter minLevel="INFO" maxLevel="INFO"/>
+            </Console>
 	  </Appenders>
      
     <Loggers>
@@ -14,6 +16,7 @@
       </Root>
         <Logger name="pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP" level="all"> 
           <AppenderRef ref="KafkaAlarms"/>
+          <AppenderRef ref="console"/>
         </Logger>
   </Loggers>
 </Configuration>

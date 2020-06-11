@@ -45,12 +45,15 @@ public class KafkaListener {
     
     
     @org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_2") //topico e groupID
-    public int consumeJointReadings(JSONObject jsonO) throws IOException, JSONException{
+    public int consumeJointReadings(String message) throws IOException, JSONException{
         
         
         List<UserReading> list_users_reads = usersReadingRep.findAll();
         
         
+        
+        JSONObject jsonO = new JSONObject(message);
+
         JSONObject elk_OBJ;
 
         
@@ -71,6 +74,7 @@ public class KafkaListener {
         joints_divided = listJoints.split(",");
         
         
+        
         if (!usersReadingRep.existsById(username)){
             
             UserReading userRead = new UserReading();
@@ -80,7 +84,6 @@ public class KafkaListener {
         }
         
         
-        int message=0;
         elk_OBJ = new JSONObject();
         if (joints_divided.length > 25){
             int numPeople = (int) Math.ceil(joints_divided.length/25);

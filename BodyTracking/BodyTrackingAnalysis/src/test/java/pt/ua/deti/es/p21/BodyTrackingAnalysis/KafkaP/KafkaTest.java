@@ -20,6 +20,8 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.Deserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import static org.hamcrest.CoreMatchers.is;
 import org.json.JSONObject;
 import org.junit.Before;
@@ -34,13 +36,13 @@ import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.core.ProducerFactory;
+import org.springframework.kafka.support.serializer.JsonDeserializer;
 import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.kafka.test.utils.KafkaTestUtils;
 import static org.springframework.kafka.test.utils.KafkaTestUtils.getRecords;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
-import static pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP.KafkaTest.TOPIC_JOINTS;
 
 @RunWith(SpringRunner.class)
 @DirtiesContext
@@ -60,9 +62,10 @@ import static pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP.KafkaTest.TOPIC_JOIN
         partitions = 1,
         brokerProperties = {"listeners=PLAINTEXT://localhost:9092", "port=9092"},
         //topics = { TOPIC_JOINTS, TOPIC_ALARMS }
-        topics = {"esp21_joints"}
+        topics = {"esp21_alarms","esp21_joints"}
 )
 public class KafkaTest {
+    private static final Logger logger = LogManager.getLogger(KafkaListener.class);
 
     @Autowired
     private KafkaListener receiver;
@@ -75,7 +78,7 @@ public class KafkaTest {
     public static String TOPIC_ALARMS = "esp21_alarms";
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String,String> kafkaTemplate;
     
     private KafkaTemplate<String, String> template;
     
@@ -114,23 +117,31 @@ public class KafkaTest {
                 + "265.4389,432.1964;72.5313,428.2726;72.7042,338.5558;70.8891,341.9003;70.2916,448.1301;200.7179,445.6667;"
                 + "192.8333\"}";
         
-        String data1
-                = "428.3214;193.7077,428.3398;158.8254,428.2409;124.0125,433.2831;109.9034,410.2422;110.9774,379.26;90.5726,355.4487;"
-                + "70.8709,345.8029;70.238,448.2417;140.7686,455.4677;166.7444,452.1386;72.36,449.5869;72.57,419.4047;"
-                + "193.4234,416.1849;229.2507,415.9737;264.5146,419.9604;273.6193,437.2123;193.9518,431.0868;229.4249,427.6477;"
-                + "265.4389,432.1964;72.5313,428.2726;72.7042,338.5558;70.8891,341.9003;70.2916,448.1301;200.7179,445.6667;"
-                + "192.8333";
+        String data1 =
+                "428.3214;193.7077,428.3398;158.8254,428.2409;124.0125,433.2831;109.9034,410.2422;110.9774,379.26;90.5726,355.4487;"
+                        + "70.8709,345.8029;70.238,448.2417;140.7686,455.4677;166.7444,452.1386;191.36,449.5869;195.57,419.4047;"
+                        + "193.4234,416.1849;229.2507,415.9737;264.5146,419.9604;273.6193,437.2123;193.9518,431.0868;229.4249,427.6477;"
+                        + "265.4389,432.1964;271.5313,428.2726;132.7042,338.5558;70.8891,341.9003;70.2916,448.1301;200.7179,445.6667;"
+                        + "192.8333";
         
-        JavaSerializer ser = new JavaSerializer();
+        //JavaSerializer ser = new JavaSerializer();
         
         
-        sender.sendMessage(data1);
         //template.send(new ProducerRecord<>(TOPIC_JOINTS,data1));//sendDefault(data1);//TOPIC_JOINTS, ser.serialize("esp21_joints", data1), data1);
 
         
+         final Consumer<String, String> consumer = buildConsumer(
+                StringDeserializer.class,
+                StringDeserializer.class
+                
+        );
         
+        
+        
+        
+        ConsumerRecord<String, String> record;
 
-        //template.send(TOPIC_NAME, "Sending with default template");
+
         Date date1 = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/YY - hh:mm:ss");
 
@@ -141,9 +152,24 @@ public class KafkaTest {
         JSONObject json0 = new JSONObject(stringJson);
         
         
-        int consumeCount = this.receiver.consumeJointReadings(json0);
+        kafkaTemplate.send(TOPIC_JOINTS, "joints", stringJson);
         
-        assertThat(consumeCount,is(1));
+        
+        
+        
+        //int consumeCount = this.receiver.consumeJointReadings(json0);
+        
+        embeddedKafka.consumeFromEmbeddedTopics(consumer, TOPIC_ALARMS);
+
+        //System.out.println("all records: "+ getRecords(consumer).count());
+        record = getSingleRecord(consumer, TOPIC_ALARMS, 300);
+
+        System.out.println("record: " + record.toString());
+        System.out.println("record: " + record.topic());
+        System.out.println("record: " + record);
+        System.out.println("record finished");
+        
+        //assertThat(consumeCount,is(1));
         System.out.println("Test of sending joints success! (TRAFULHA)");
     }
     
@@ -182,7 +208,7 @@ public class KafkaTest {
         JSONObject json0 = new JSONObject(stringJson);
         
         
-        int consumeCount = this.receiver.consumeJointReadings(json0);
+        int consumeCount = this.receiver.consumeJointReadings(stringJson);
         
         assertThat(consumeCount,is(1));
         System.out.println("Test of sending joints success!");
@@ -208,7 +234,7 @@ public class KafkaTest {
 
         //this.kafkaTemplate.send(TOPIC_JOINTS, "joints", data1);
         
-        this.sender.sendMessage(data1);
+        //this.sender.sendMessage(data1);
 
         final Consumer<String, String> consumer = buildConsumer(
                 StringDeserializer.class,
@@ -227,7 +253,7 @@ public class KafkaTest {
         // Use Hamcrest matchers provided by spring-kafka-test
         // https://docs.spring.io/spring-kafka/docs/2.2.4.RELEASE/reference/#hamcrest-matchers
 
-        assertThat(record, hasKey("joints"));
+        //assertThat(record, hasKey("joints"));
         //assertThat(record, hasValue("coelhoguilherme"));
         System.out.println("Test of receiving joints success!");
     }

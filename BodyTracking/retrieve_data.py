@@ -50,7 +50,7 @@ def main():
                         data = {"username":username, "date_reading": date_reading, "joints": line}
 
                         producer.send('esp21_joints', value=data)
-                        time.sleep(0.5)
+                        time.sleep(1)
 
 
 

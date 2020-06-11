@@ -25,9 +25,9 @@ public class KafkaProducer {
     private static final String TOPIC = "esp21_joints";
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String, JSONObject> kafkaTemplate;
     
-    public void sendMessage(String message) {
+    public void sendMessage(JSONObject message) {
         //SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
         //Date date = new Date(System.currentTimeMillis());
         this.kafkaTemplate.send(TOPIC, "joints", message);
