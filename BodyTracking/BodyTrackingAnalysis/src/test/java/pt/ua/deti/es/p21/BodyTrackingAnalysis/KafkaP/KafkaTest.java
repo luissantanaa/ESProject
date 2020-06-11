@@ -2,54 +2,53 @@ package pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP;
 
 /**
  *
- * @author joao
+ * @author joao e guilherme
  */
 //import com.springkafkatest.model.event.UpdatedBrandEvent;
-import java.util.Map;
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.LinkedBlockingQueue;
-import org.apache.kafka.clients.consumer.ConsumerRecord;
-import org.junit.Before;
-import org.junit.ClassRule;
-import org.junit.Test;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Iterator;
+import static org.springframework.kafka.test.utils.KafkaTestUtils.getSingleRecord;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import org.json.JSONObject;
-import org.junit.After;
+import java.util.Map;
+import org.apache.kafka.clients.consumer.Consumer;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.common.serialization.Deserializer;
+import org.apache.kafka.common.serialization.StringDeserializer;
+import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
-import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.kafka.listener.ContainerProperties;
-import org.springframework.kafka.listener.KafkaMessageListenerContainer;
-
-import org.springframework.kafka.listener.MessageListener;
+import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.context.EmbeddedKafka;
-import org.springframework.kafka.test.rule.EmbeddedKafkaRule;
-import org.springframework.kafka.test.utils.ContainerTestUtils;
 import org.springframework.kafka.test.utils.KafkaTestUtils;
+import static org.springframework.kafka.test.utils.KafkaTestUtils.getRecords;
 import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.junit4.SpringRunner;
+import static pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP.KafkaTest.TOPIC_JOINTS;
 
 @RunWith(SpringRunner.class)
 @DirtiesContext
-@SpringBootTest(
-    // tell Spring Boot Kafka auto-config about the embedded kafka endpoints
-        
-    //properties = "spring.kafka.bootstrap-servers=${spring.embedded.kafka.brokers}",
-        
-    // slice our unit test app context down to just these specific pieces
-    //classes = {
+@SpringBootTest( // tell Spring Boot Kafka auto-config about the embedded kafka endpoints
+        //properties = "spring.kafka.bootstrap-servers=${spring.embedded.kafka.brokers}",
+        // slice our unit test app context down to just these specific pieces
+        //classes = {
         // ...the service to test
-    //    KafkaProducer.class,
+        //    KafkaProducer.class,
         // ...use standard Sprint Boot kafka auto-config to give us KafkaTemplate, etc
-    //    KafkaTopicConfig.class,
+        //    KafkaTopicConfig.class,
         // ...and our additional test config
         //KafkaProducerTest.TestConfig.class
-    //}
+        //}
+        )
+@EmbeddedKafka(
+        partitions = 1,
+        brokerProperties = {"listeners=PLAINTEXT://localhost:9092", "port=9092"},
+        //topics = { TOPIC_JOINTS, TOPIC_ALARMS }
+        topics = {"esp21_alarms"}
 )
-//@EmbeddedKafka(partitions = 1, brokerProperties = {"listeners=PLAINTEXT://localhost:9092", "port=9092"})
 public class KafkaTest {
 
     @Autowired
@@ -58,20 +57,21 @@ public class KafkaTest {
     @Autowired
     private KafkaProducer sender;
 
-    private static String TOPIC_NAME = "esp21_joints";
+    public static String TOPIC_JOINTS = "esp21_joints";
 
-    @Autowired
-    public KafkaTemplate<String, String> template;
+    public static String TOPIC_ALARMS = "esp21_alarms";
 
+    //@Autowired
+    //public KafkaTemplate<String, String> template;
     //FIXME: everything below here is a fix for the IDE - else @EmbeddedKafka should be enough
     //@Autowired
     //public EmbeddedKafkaRule kafkaEmbedded;
-
-    @ClassRule
-    public static EmbeddedKafkaRule embeddedKafka = new EmbeddedKafkaRule(1, true, TOPIC_NAME);
+    //@ClassRule
+    //public static EmbeddedKafkaRule embeddedKafka = new EmbeddedKafkaRule(1, true, TOPIC_NAME);
+    @Autowired
+    private EmbeddedKafkaBroker embeddedKafka;
 
     //private KafkaMessageListenerContainer<String, String> container;
-
     //private BlockingQueue<ConsumerRecord<String, String>> records;
 
     /*@Before
@@ -79,7 +79,7 @@ public class KafkaTest {
         receiver = new KafkaListener();
         //sender =  new KafkaProducer();
     }*/
-    /*@Before
+ /*@Before
     public void setUp() throws Exception {
         // set up the Kafka consumer properties
         Map<String, Object> consumerProperties
@@ -93,7 +93,7 @@ public class KafkaTest {
 
         // set the topic that needs to be consumed
         ContainerProperties containerProperties
-                = new ContainerProperties(TOPIC_NAME);
+                = new ContainerProperties(TOPIC_JOINTS);
 
         // create a Kafka MessageListenerContainer
         container = new KafkaMessageListenerContainer<>(consumerFactory,
@@ -120,7 +120,6 @@ public class KafkaTest {
         ContainerTestUtils.waitForAssignment(container,
                 embeddedKafka.getEmbeddedKafka().getPartitionsPerTopic());
     }*/
-    
     @Test
     public void test() throws Exception {
         System.out.println("Test ok!");
@@ -137,14 +136,60 @@ public class KafkaTest {
                 + "192.8333";
 
         //template.send(TOPIC_NAME, "Sending with default template");
-        sender.sendMessage(data1);
+        Date date1 = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/mm/YY - hh:mm:ss");
 
-        JSONObject json = new JSONObject(data1);
+        String date = sdf.format(date1);
 
-        //receiver.consumeJointReadings(json);
+        String stringJson = "{\"username\": \"coelhoguilherme\", \"date_reading\": \"" + date + "\", \"joints\": \"" + data1 + "\"}";
 
-        assertThat(receiver).isEqualTo(1);
-        //System.out.println("Test 1 Successful\n");
+        sender.sendMessage(stringJson);
+
+        final Consumer<String, String> consumer = buildConsumer(
+                StringDeserializer.class,
+                StringDeserializer.class
+        );
+
+        embeddedKafka.consumeFromEmbeddedTopics(consumer, TOPIC_ALARMS);
+        
+        System.out.println("all records: "+ getRecords(consumer).count());
+        
+        /*for (Iterator iterator = getRecords(consumer).iterator(); iterator.hasNext();) {
+            Object next = iterator.next();
+            System.out.println("ite:"+ next);
+            System.out.println("ite:"+ next.toString());
+        }*/
+        
+        final ConsumerRecord<String, String> record = getSingleRecord(consumer, TOPIC_ALARMS);
+
+        System.out.println("record: " + record.toString());
+        System.out.println("record: " + record.topic());
+        System.out.println("record: " + record);
+        System.out.println("record finishedd");
+        // Use Hamcrest matchers provided by spring-kafka-test
+        // https://docs.spring.io/spring-kafka/docs/2.2.4.RELEASE/reference/#hamcrest-matchers
+
+        //assertThat(record, hasKey("username"));
+        //assertThat(record, hasValue("coelhoguilherme"));
+    }
+
+    private <K, V> Consumer<K, V> buildConsumer(Class<? extends Deserializer> keyDeserializer,
+            Class<? extends Deserializer> valueDeserializer) {
+        // Use the procedure documented at https://docs.spring.io/spring-kafka/docs/2.2.4.RELEASE/reference/#embedded-kafka-annotation
+
+        final Map<String, Object> consumerProps = KafkaTestUtils
+                .consumerProps("esp21_joints", "true", embeddedKafka);
+        // Since we're pre-sending the messages to test for, we need to read from start of topic
+        consumerProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
+        // We need to match the ser/deser used in expected application config
+        consumerProps
+                .put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, keyDeserializer.getName());
+        consumerProps
+                .put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, valueDeserializer.getName());
+
+        final DefaultKafkaConsumerFactory<K, V> consumerFactory
+                = new DefaultKafkaConsumerFactory<>(consumerProps);
+        return consumerFactory.createConsumer();
     }
 
     /*@After
@@ -153,7 +198,7 @@ public class KafkaTest {
         container.stop();
     }*/
 
-    /*
+ /*
     //@Test
     public void both_arms_up_joints() throws InterruptedException, IOException { // BOTH ARMS UP
         System.out.println("Test of receiving joints starting!");
