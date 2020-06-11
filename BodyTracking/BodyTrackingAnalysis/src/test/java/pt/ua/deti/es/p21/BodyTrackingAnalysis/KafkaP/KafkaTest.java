@@ -7,7 +7,8 @@ package pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP;
 //import com.springkafkatest.model.event.UpdatedBrandEvent;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Iterator;
+import static org.junit.Assert.assertThat;
+import static org.springframework.kafka.test.hamcrest.KafkaMatchers.hasKey;
 import static org.springframework.kafka.test.utils.KafkaTestUtils.getSingleRecord;
 
 import java.util.Map;
@@ -20,7 +21,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.test.EmbeddedKafkaBroker;
 import org.springframework.kafka.test.context.EmbeddedKafka;
 import org.springframework.kafka.test.utils.KafkaTestUtils;
@@ -47,19 +51,22 @@ import static pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP.KafkaTest.TOPIC_JOIN
         partitions = 1,
         brokerProperties = {"listeners=PLAINTEXT://localhost:9092", "port=9092"},
         //topics = { TOPIC_JOINTS, TOPIC_ALARMS }
-        topics = {"esp21_alarms"}
+        topics = {"esp21_joints"}
 )
 public class KafkaTest {
 
     @Autowired
     private KafkaListener receiver;
-
+    
     @Autowired
     private KafkaProducer sender;
 
     public static String TOPIC_JOINTS = "esp21_joints";
 
     public static String TOPIC_ALARMS = "esp21_alarms";
+    
+    @Autowired
+    private KafkaTemplate<String, String> kafkaTemplate;
 
     //@Autowired
     //public KafkaTemplate<String, String> template;
@@ -143,24 +150,18 @@ public class KafkaTest {
 
         String stringJson = "{\"username\": \"coelhoguilherme\", \"date_reading\": \"" + date + "\", \"joints\": \"" + data1 + "\"}";
 
-        sender.sendMessage(stringJson);
+        this.kafkaTemplate.send(TOPIC_JOINTS, "joints", data1);
 
         final Consumer<String, String> consumer = buildConsumer(
                 StringDeserializer.class,
                 StringDeserializer.class
         );
 
-        embeddedKafka.consumeFromEmbeddedTopics(consumer, TOPIC_ALARMS);
+        embeddedKafka.consumeFromEmbeddedTopics(consumer, TOPIC_JOINTS);
         
         System.out.println("all records: "+ getRecords(consumer).count());
         
-        /*for (Iterator iterator = getRecords(consumer).iterator(); iterator.hasNext();) {
-            Object next = iterator.next();
-            System.out.println("ite:"+ next);
-            System.out.println("ite:"+ next.toString());
-        }*/
-        
-        final ConsumerRecord<String, String> record = getSingleRecord(consumer, TOPIC_ALARMS);
+        final ConsumerRecord<String, String> record = getSingleRecord(consumer, TOPIC_JOINTS, 300);
 
         System.out.println("record: " + record.toString());
         System.out.println("record: " + record.topic());
@@ -169,7 +170,7 @@ public class KafkaTest {
         // Use Hamcrest matchers provided by spring-kafka-test
         // https://docs.spring.io/spring-kafka/docs/2.2.4.RELEASE/reference/#hamcrest-matchers
 
-        //assertThat(record, hasKey("username"));
+        assertThat(record, hasKey("joints"));
         //assertThat(record, hasValue("coelhoguilherme"));
     }
 
@@ -178,7 +179,7 @@ public class KafkaTest {
         // Use the procedure documented at https://docs.spring.io/spring-kafka/docs/2.2.4.RELEASE/reference/#embedded-kafka-annotation
 
         final Map<String, Object> consumerProps = KafkaTestUtils
-                .consumerProps("esp21_joints", "true", embeddedKafka);
+                .consumerProps("testSend", "true", embeddedKafka);
         // Since we're pre-sending the messages to test for, we need to read from start of topic
         consumerProps.put(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, "earliest");
         // We need to match the ser/deser used in expected application config
