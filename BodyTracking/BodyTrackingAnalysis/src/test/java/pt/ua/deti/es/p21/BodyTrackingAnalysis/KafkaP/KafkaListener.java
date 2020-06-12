@@ -1,10 +1,13 @@
+package pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP;
 
+
+import pt.ua.deti.es.p21.BodyTrackingAnalysis.KafkaP.*;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Random;
@@ -47,7 +50,7 @@ public class KafkaListener {
     UsersReadingsRepository usersReadingRep;
     
     
-    @org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_2") //topico e groupID
+    //@org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_2") //topico e groupID
     public int consumeJointReadings(String message) throws IOException, JSONException{
         
         
@@ -125,7 +128,7 @@ public class KafkaListener {
         return 1;
     }
     
-    @org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_3") //topico e groupID
+    //@org.springframework.kafka.annotation.KafkaListener(topics = "esp21_joints", groupId = "esp21_3") //topico e groupID
     public int consumeJointReadingsT(String message) throws IOException, JSONException{
         
         
@@ -192,9 +195,10 @@ public class KafkaListener {
         }
         
         
-        ktemplate.send("esp21_alarms",elk_OBJ.toString() );
+        ktemplate.send("esp21_alarms",elk_OBJ.toString());
         
         
+        //return elk_OBJ.toString();
         return 1;
     }
 }
