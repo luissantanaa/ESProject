@@ -189,7 +189,7 @@ public class KafkaListener {
             elk_OBJ.put("alarm", "RIGHT_ARM");
             
         
-        }else if(Float.parseFloat(joints_divided[6].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1]) &&Float.parseFloat(joints_divided[10].split(";")[1]) < Float.parseFloat(joints_divided[3].split(";")[1])){
+        }else if(Float.parseFloat(joints_divided[6].split(";")[1]) > Float.parseFloat(joints_divided[3].split(";")[1]) &&Float.parseFloat(joints_divided[10].split(";")[1]) > Float.parseFloat(joints_divided[3].split(";")[1])){
             elk_OBJ.put("alarm", "HANDSTAND");
         
         }
