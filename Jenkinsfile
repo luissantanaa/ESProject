@@ -57,8 +57,7 @@ pipeline {
                 }
             }
             steps {
-                echo 'Testing phase is about to start'
-                sh 'cd BodyTracking/BodyTracking/ && mvn verify'
+                echo 'Nothing to test here'
             }
         }
 
