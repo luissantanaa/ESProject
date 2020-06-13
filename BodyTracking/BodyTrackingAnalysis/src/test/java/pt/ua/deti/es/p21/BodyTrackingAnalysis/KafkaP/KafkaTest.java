@@ -150,7 +150,7 @@ public class KafkaTest {
     
     @Test
     public void testReceiveBothArmsUp() throws Exception {
-        System.out.println("Test of sending joints starting!");
+        System.out.println("Test of sending joints starting! (Both Arms)");
         
         String data1 =
                 "428.3214;193.7077,428.3398;158.8254,428.2409;124.0125,433.2831;109.9034,410.2422;110.9774,379.26;90.5726,355.4487;"
@@ -180,7 +180,7 @@ public class KafkaTest {
     
     @Test
     public void testReceiveLeftArmUp() throws Exception {
-        System.out.println("Test of sending joints starting!");
+        System.out.println("Test of sending joints starting! (Left Arm)");
         
         String data1 =
                 "428.3214;193.7077,428.3398;158.8254,428.2409;124.0125,433.2831;109.9034,410.2422;110.9774,379.26;90.5726,355.4487;"
@@ -210,7 +210,7 @@ public class KafkaTest {
     
     @Test
     public void testReceiveRightArmUp() throws Exception {
-        System.out.println("Test of sending joints starting!");
+        System.out.println("Test of sending joints starting! (Right Arm)");
         
         String data1 =
                 "428.3214;193.7077,428.3398;158.8254,428.2409;124.0125,433.2831;109.9034,410.2422;110.9774,379.26;90.5726,355.4487;"
@@ -240,7 +240,7 @@ public class KafkaTest {
     
     @Test
     public void testReceiveTwoPersons() throws Exception {
-        System.out.println("Test of sending joints starting!");
+        System.out.println("Test of sending joints starting (Two Persons) !");
         
         String data1 =
                 "428.3214;193.7077,428.3398;158.8254,428.2409;124.0125,433.2831;109.9034,410.2422;110.9774,379.26;90.5726,355.4487;"
@@ -277,7 +277,7 @@ public class KafkaTest {
     
     @Test
     public void testReceiveHandstand() throws Exception {
-        System.out.println("Test of sending joints starting!");
+        System.out.println("Test of sending joints starting! (handstand)");
         
         String data1 =
                 "428.3214;107.7077,428.3398;142.8254,428.2409;176.0125,433.2831;191.9034,410.2422;190.9774,379.26;210.5726,355.4487;"
